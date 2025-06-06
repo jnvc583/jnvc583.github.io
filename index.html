@@ -34,10 +34,7 @@
   </head>
   <body style="background-color:rgb(0,0,0);">
     <script>
-      function myFunction()
-        {
           alert("欢迎访问/回家，jnvc583");
-        }
     </script>
     <h1 align="center">jnvc583的网站</h1>
     <div>
@@ -46,18 +43,6 @@
         <input type="text" name="NAME" />
         <input type="submit" value="提交" />
       </form>
-      <script>
-        af.elements[af.elements.length-1].onclick = function(e){
-          if(af.NAME.value == ""){
-            alert("你是无名氏吗？");
-            if(e)
-              e.preventDefault();
-            else
-              event.returnValue = false()
-          }else{
-            alert("你好，"+af.NAME.value)
-          }
-      </script>
     </div>
   </body>
 </html>
