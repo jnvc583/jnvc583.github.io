@@ -10,4 +10,5 @@ etn.onclick=function(){
     Body: ef.mai.value
   }).then(
     message => alert(message)
+  );;
 }
