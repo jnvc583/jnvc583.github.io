@@ -1,7 +1,7 @@
 var etn= document.getElementById("etn");
 etn.onclick=function(){
   Email.send({
-    Host: "stmp.zoho.com",
+    Host: "smtp.zoho.com",
     Username: "jnvcotc@zohomail.cn",
     Password: "324893246877193",
     To: "jnvcotc@zohomail.cn",
