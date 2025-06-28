@@ -23,6 +23,10 @@
   width: 12mm;
   height: 8mm;
 }
+.spfbtn{
+  background-color: rgb(0,200,200);
+  color: white;
+}
 span{
   display: inline-block;
 }
