@@ -23,9 +23,6 @@
   width: 12mm;
   height: 8mm;
 }
-body{
-  display: flex;
-}
 span{
   display: inline-block;
 }
