@@ -16,4 +16,10 @@
 .submit{
   background-color:rgb(0,110,0);
   color:rgb(255,255,255);
+  border-style: solid;
+  border-color: green;
+  border-width: thin;
+  border-radius: 25px;
+  width: 12mm;
+  height: 8mm;
 }
