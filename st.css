@@ -64,10 +64,10 @@ h1.animate span{
 @keyframes blink{
   0%,
   100%{
-    color: inherit;
+    text-shadow: 0 0 10px rgb(200,200,0);
   }
   50%{
-    color: rgb(200,200,0);
+    ctext-shadow: none;
   }
 }
 @keyframes all{
