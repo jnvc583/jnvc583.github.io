@@ -87,5 +87,5 @@ h1.animate span{
 }
 .blk{
   font-size: 24px;
-  animation: glowing-animation 2s infinite;
+  animation: blink 2s infinite;
 }
