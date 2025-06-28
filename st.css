@@ -85,3 +85,7 @@ h1.animate span{
     transform: rotateY(90deg);
   }
 }
+.blk{
+  font-size: 24px;
+  animation: glowing-animation 2s infinite;
+}
