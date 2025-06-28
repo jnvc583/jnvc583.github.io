@@ -25,7 +25,6 @@
 }
 body{
   display: flex;
-  direction: column;
 }
 span{
   display: inline-block;
