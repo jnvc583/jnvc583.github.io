@@ -23,3 +23,23 @@
   width: 12mm;
   height: 8mm;
 }
+body{
+  display: flex;
+  direction: column;
+}
+span{
+  display: inline-block;
+}
+h1.animate span{
+  animation: 0.4s var(--animation) ease-in-out;
+  animation-delay: var(--delay);
+}
+@keyframes jump{
+  0%,
+  100%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+}
