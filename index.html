@@ -50,7 +50,7 @@ body{
 }
 .shell-app{
   width:98%;
-  height:13cm;
+  height:20cm;
   background:white;
   box-sizing:border-box;
   margin-top:40px;
@@ -69,6 +69,7 @@ body{
 .meet-app{
   display:flex;
   margin:20px 0 30px 20px;
+  box-shadow:rgba(149,157,165,0.2) 0px 8px 20px;
 }
 .meet-submit{
   width:100px;
@@ -107,9 +108,22 @@ body{
         <hr class="hrofdiv" />
         <h2 class="char1">作者（jnvc583）介绍</h2>
         <p class="char3">jnvc583，原名陈韵泽。爱好信息技术。愿望改变家乡江西。</p>
+        <hr class="hrofdiv" />
         <div class="meet-app">
           <input type="text" class="meet-name" placeholder="输入你的名字" />
           <div class="meet-submit">上传名字</div>
+        </div>
+        <h4 class="char1">What is your job?（你的干哪一个工作？）</h4>
+        <div class="job">
+          <form id="af">
+            <input list="job" class="job-select" name="pn2" />
+            <datalist id="job">
+              <option value="Student（学生）"></option>
+              <option value="Develop（开发者）"></option>
+              <option value="Teacher（老师）"></option>
+              <option value="Others（其他）"></option>
+            </datalist>
+          </form>
         </div>
       </div>
     </div>
