@@ -70,7 +70,6 @@ body{
 .meet-app{
   display:flex;
   margin:20px 0 30px 20px;
-  box-shadow:rgba(149,157,165,0.2) 0px 8px 20px;
 }
 .meet-submit{
   width:100px;
@@ -87,6 +86,7 @@ body{
   cursor:pointer;
   font-size:14px;
   user-select:none;
+  box-shadow:rgba(149,157,165,0.2) 0px 8px 20px;
 }
 .meet-name{
   padding:0px 15px 0px 15px;
@@ -95,10 +95,23 @@ body{
   outline:none;
   width:18cm;
   height:50px;
+  box-shadow:rgba(149,157,165,0.2) 0px 0px 20px;
 }
   </style>
   </head>
   <body>
+    <script>
+      function jobsubmit(){
+        let jobname = af.pn2.value
+      }
+      function namesubmit(){
+        let username = pn1.value
+        alert("您好" + username)
+        if(username === "余佳萱"){
+          alert("傻逼！")
+        }
+      }
+    </script>
     <div class="shell-app">
       <h1 align="center" class="char1">jnvc583的网站</h1>
       <div class="ctofdiv">
@@ -111,21 +124,18 @@ body{
         <p class="char3">jnvc583，原名陈韵泽。爱好信息技术。愿望改变家乡江西。</p>
         <hr class="hrofdiv" />
         <div class="meet-app">
-          <input type="text" class="meet-name" placeholder="输入你的名字" />
-          <div class="meet-submit">上传名字</div>
+          <input type="text" class="meet-name" placeholder="输入你的名字" name="pn1" />
+          <div class="meet-submit" onclick="namesubmit">上传名字</div>
         </div>
         <h4 class="char1">What is your job?（你的干哪一个工作？）</h4>
         <div class="meet-app">
           <form id="af">
-            <input list="job-select" class="meet-name" name="pn2" />
-            <datalist id="job-select">
-              <option value="Student（学生）"></option>
-              <option value="Develop（开发者）"></option>
-              <option value="Teacher（老师）"></option>
-              <option value="Others（其他）"></option>
-            </datalist>
+            <input name="pn2" type="radio" value="学生" />
+            <input name="pn2" type="radio" value="开发者" />
+            <input name="pn2" type="radio" value="老师" />
+            <input name="pn2" type="radio" value="其他" />
           </form>
-          <div class="meet-submit">提交工作</div>
+          <div class="meet-submit" onclick="jobsubmit">提交工作</div>
         </div>
       </div>
     </div>
