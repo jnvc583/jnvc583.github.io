@@ -100,19 +100,6 @@ body{
   </style>
   </head>
   <body>
-    <script>
-      function jobsubmit(){
-        let jobname = af.pn2.value;
-      }
-      function namesubmit(){
-        console.log("hhh");
-        let username = pn1.value;
-        alert("您好" + username);
-        if(username === "余佳萱"){
-          alert("傻逼！");
-        }
-      }
-    </script>
     <div class="shell-app">
       <h1 align="center" class="char1">jnvc583的网站</h1>
       <div class="ctofdiv">
@@ -129,18 +116,21 @@ body{
           <div class="meet-submit" @click="namesubmit">上传名字</div>
         </div>
         <h4 class="char1">What is your job?（你的干哪一个工作？）</h4>
-        <div class="meet-app">
-          <form id="af">
-            <input name="pn2" type="radio" value="学生">学生</input>
-            <input name="pn2" type="radio" value="开发者">开发者</input>
-            <input name="pn2" type="radio" value="老师">老师</input>
-            <input name="pn2" type="radio" value="其他">其他</input>
-          </form>
-          <div class="meet-submit" onclick="jobsubmit">提交工作</div>
-        </div>
       </div>
     </div>
-    
+    <script>
+      function jobsubmit(){
+        let jobname = af.pn2.value;
+      }
+      function namesubmit(){
+        console.log("hhh");
+        let username = pn1.value;
+        alert("您好" + username);
+        if(username === "余佳萱"){
+          alert("傻逼！");
+        }
+      }
+    </script>    
     <hr/>
     <h3 class="char1">项目：</h3>
     <ul>
