@@ -67,80 +67,24 @@ body{
 .hrofdiv{
   color:black;
 }
-.meet-app{
-  display:flex;
-  margin:20px 0 30px 20px;
-}
-.meet-submit{
-  width:100px;
-  height:50px;
-  border-radius:0 20px 20px 0;
-  line-height:50px;
-  text-align:center;
-  background: linear-gradient(
-    to right,
-    rgb(113,65,168),
-    rgba(44,114,251,1)
-  );
-  color:white;
-  cursor:pointer;
-  font-size:14px;
-  user-select:none;
-  box-shadow:rgba(149,157,165,0.2) 0px 8px 20px;
-}
-.meet-name{
-  padding:0px 15px 0px 15px;
-  border-radius:20px 0 0 20px;
-  border:1px solid #dfe1e5;
-  outline:none;
-  width:18cm;
-  height:50px;
-  box-shadow:rgba(149,157,165,0.2) 0px 0px 20px;
-}
   </style>
   </head>
   <body>
     <div class="shell-app">
       <h1 align="center" class="char1">jnvc583的网站</h1>
       <div class="ctofdiv">
+            <hr class="hrofdiv" />
+            <h3 class="char1">项目：</h3>
+            <ul>
+              <li class="char2"><a href="https://jnvc583.github.io/stickman/game/index.html" target="_self" class="char2">VCSTICKMAN</a></li>
+            </ul>
+            <hr class="hrofdiv" />
+            <h1 class="char1">制作特效</h1>
+            <ol>
+              <li class="char2"><a href="https://jnvc583.github.io/posts/tex/1.html" target="_self" class="char2">开灯特效</a></li>
+            </ol>
         <hr class="hrofdiv" />
-        <h3 class="char2">2025 江西江楠VC科技有限公司</h3>
-        <h6 class="char2">本网站为江西九江江楠VC科技有限公司所有</h6>
-        <h6 class="char3">2024~2025 (c) Jiangxi JiangNan VC Technology Limited Company (JNVCOTC)</h6>
-        <hr class="hrofdiv" />
-        <h2 class="char1">作者（jnvc583）介绍</h2>
-        <p class="char3">jnvc583，原名陈韵泽。爱好信息技术。愿望改变家乡江西。</p>
-        <hr class="hrofdiv" />
-        <div class="meet-app">
-          <input type="text" class="meet-name" placeholder="输入你的名字" name="pn1" />
-          <div class="meet-submit" @click="namesubmit">上传名字</div>
-        </div>
-        <h4 class="char1">What is your job?（你的干哪一个工作？）</h4>
       </div>
-    </div>
-    <script>
-      function jobsubmit(){
-        let jobname = af.pn2.value;
-      }
-      function namesubmit(){
-        console.log("hhh");
-        let username = pn1.value;
-        alert("您好" + username);
-        if(username === "余佳萱"){
-          alert("傻逼！");
-        }
-      }
-    </script>    
-    <hr/>
-    <h3 class="char1">项目：</h3>
-    <ul>
-      <li class="char2"><a href="https://jnvc583.github.io/diary/index.html" target="_self" class="char2">日记</a></li>
-      <li class="char2"><a href="https://jnvc583.github.io/novel/index.html" target="_self" class="char2">小说</a></li>
-    </ul>
-    <hr/>
-    <h1 class="char1">制作特效</h1>
-    <ol>
-      <li class="char2"><a href="https://jnvc583.github.io/posts/tex/1.html" target="_self" class="char2">开灯特效</a></li>
-    </ol>
+    </div>    
   </body>
 </html>
