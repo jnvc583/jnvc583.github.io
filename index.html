@@ -1,108 +1,87 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class=" js "><head>
-  <title>江西江楠VC科技有限公司</title>
-  <style>
-.char1{
-  color:rgb(0,200,200);
-}
-.char2{
-  color:rgb(250,150,91);
-}
-.char3{
-  color:rgb(150,150,220);
-}
-.char4{
-  color:rgb(255,255,255);
-}
-.char5{
-  color:rgb(255,255,0);
-}
-body{
-  background: linear-gradient(
-    to right,
-    rgb(113,65,168),
-    rgba(44,114,251,1)
-  );
-}
-.submit{
-  background-color:rgb(0,110,0);
-  color:rgb(255,255,255);
-  border-style: solid;
-  border-color: green;
-  border-width: thin;
-  border-radius: 25px;
-  width: 12mm;
-  height: 8mm;
-}
-.spfbtn{
-  background-color: rgb(0,200,200);
-  color: white;
-}
-.blk{
-  color:rgb(0,200,200);
-  font-size: 24px;
-  text-decoration: blink;
-}
-.mspfi{
-  top:126mm;
-  left:66mm;
-  width:300px;
-  height:125px;
-}
-.shell-app{
-  width:98%;
-  height:20cm;
-  background:white;
-  box-sizing:border-box;
-  margin-top:40px;
-  margin-left:1%;
-  padding-top:30px;
-  border-radius:8px;
-  
-}
-.ctofdiv{
-  margin-left:2%;
-  margin-right:2%;
-}
-.hrofdiv{
-  color:black;
-}
-.page-menu{
-  background:#f8f8f8;
-  position:relax;
-  top:0px;
-  left:0px;
-  width:100%;
-  height:18mm;
-}
-  </style>
-  </head>
-  <body>
-    <header>
-      <div class="page-menu">
-        <select>
-          <option value="rich1">rich1</option>
-          <option value="rich2">rich2</option>
-        </select>
-      </div>
-    </header>
-    <div class="shell-app">
-      <h1 align="center" class="char1">jnvc583的网站</h1>
-      <div class="ctofdiv">
-        <hr class="hrofdiv" />
-        <h3 class="char1">项目：</h3>
-        <ul>
-          <li class="char2"><a href="https://jnvc583.github.io/stickman/game/index.html" target="_self" class="char2">VCSTICKMAN（正在开发）</a></li>
-        </ul>
-        <hr class="hrofdiv" />
-        <h1 class="char1">制作特效</h1>
-        <ol>
-          <li class="char2"><a href="https://jnvc583.github.io/posts/tex/1.html" target="_self" class="char2">开灯特效</a></li>
-        </ol>
-        <hr class="hrofdiv" />
-        <h1 class="char1">公告栏</h1>
-        <p>1.VCSTICKMAN（1.0Beta1test）目前正在开发中，预计在9月中旬发布。</p>
-      </div>
-    </div>    
-  </body>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江西VC</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./st.css"></link>
+	<link rel="icon" type="image/png" href="./card.png"></link>
+    <script src="./datec.js"></script>
+</head>
+<body>
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <image src="./logo.png"></image>
+                </div>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li class="nav-item">
+                            <button class="dropdown-toggle text-gray-900 hover:text-blue-500 px-3 py-2 flex items-center">
+                                产品 <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="block">VCSTICKMAN（开发中）</a></li>
+                                <li><a href="#" class="block">VCEDITOR（开发中）</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <button class="dropdown-toggle text-gray-900 hover:text-blue-500 px-3 py-2 flex items-center">
+                                资讯 <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="block">VCSTICKMAN的开发</a></li>
+                                <li><a href="#" class="block">VCEDITOR的开发</a></li>
+                            </ul>
+                        </li>
+						<li>
+						    <div style="background:white;width:100px;height:64px;"></div>
+						</li>
+                    </ul>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden flex items-left">
+                    <button class="mobile-menu-button" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-gray-500 text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div class="mobile-menu md:hidden">
+            <div class="px-2 pt-2 pb-4 space-y-1">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">首页</a>
+                <div>
+                    <button class="dropdown-toggle-mobile w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 flex justify-between items-center" onclick="toggleSubMenu(this)">
+                        产品 <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                    </button>
+                    <ul class="dropdown-menu-mobile pl-4">
+                        <li><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">VCSTICKMAN（开发中）</a></li>
+                        <li><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">VCEDITOR（开发中）</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="dropdown-toggle-mobile w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 flex justify-between items-center" onclick="toggleSubMenu(this)">
+                        资讯 <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+                    </button>
+                    <ul class="dropdown-menu-mobile pl-4">
+                        <li><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">VCSTICKMAN的开发</a></li>
+                        <li><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">VCEDITOR的开发</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script src="./menu.js"></script>
+    <div id="main">
+	</div>
+</body>
 </html>
