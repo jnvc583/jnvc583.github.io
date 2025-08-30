@@ -16,7 +16,7 @@
 body, .page-content{
   background: linear-gradient(
     to right,
-    rgb(196,10,199),
+    rgb(113,65,168),
     rgba(251,0,255,1)
   );
 }
@@ -104,3 +104,4 @@ body, .page-content{
     transform: rotate(90deg);
 
 }
+
