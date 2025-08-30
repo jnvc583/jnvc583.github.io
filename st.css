@@ -16,8 +16,8 @@
 body, .page-content{
   background: linear-gradient(
     to right,
-    rgb(113,65,168),
-    rgba(44,114,251,1)
+    rgb(196,10,199),
+    rgba(251,0,255,1)
   );
 }
 .page-content{
@@ -102,4 +102,5 @@ body, .page-content{
 }
 .mobile-menu-button.active {
     transform: rotate(90deg);
+
 }
