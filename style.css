@@ -1,0 +1,80 @@
+﻿body {
+    margin: 0;
+    background: rgb(250,250,250);
+}
+* {
+    user-select: none;
+}
+.root {
+    position: absolute;
+    left: 0;
+    background: inherit;
+    width: 100%;
+}
+.main {
+    width: 100%;
+    display: flex;
+}
+.content {
+    margin-top: 21.44px;
+}
+.purple {
+    color: rgb(150,50,250);
+    text-decoration: none;
+}
+.lightgray, i, .fangshi a {
+    color: inherit;
+}
+.sticky {
+    padding: 10px;
+    color: rgb(80,80,80);
+    transition: all 1s;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(200,200,200);
+    border-radius: 10px;
+    width: 305.766px;
+    height: 469px;
+    position: sticky;
+    top: 0;
+    margin-left: 7%;
+    margin-right: 6%;
+    margin-top: 21.44px;
+    transition: all 1s;
+}
+.sticky:hover {
+    color: black;
+    border-radius: 25px;
+    padding: 25px;
+    margin-left: 6%;
+}
+.fangshi ul {
+    list-style-type: none;
+}
+.projects, .posts {
+    margin-top: 21.44px;
+}
+.projects, .posts {
+    color: rgb(100,100,100);
+    transition: all 1s;
+}
+.projects:hover, .posts:hover {
+    color: black;
+}
+a {
+    color: inherit;
+}
+.menu {
+    padding: 22px;
+    color: rgb(181,230,29);
+}
+h1 {
+    margin: 0;
+}
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.list {
+    margin-top: 50px;
+}

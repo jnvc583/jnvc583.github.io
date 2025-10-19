@@ -1,259 +1,61 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>江西VC</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="./st.css"></link>
-	<link rel="icon" type="image/png" href="./card.png"></link>
-    <script src="./datec.js"></script>
-	<style>
-.char1{
-  color:rgb(0,200,200);
-}
-.char2{
-  color:rgb(250,150,91);
-}
-.char3{
-  color:rgb(150,150,220);
-}
-.char4{
-  color:rgb(255,255,255);
-}
-.char5{
-  color:rgb(255,255,0);
-}
-body, .page-content{
-  background: linear-gradient(
-    to right,
-    rgb(113,65,168),
-    rgba(251,0,255,1)
-  );
-}
-.page-content{
-  position:absolute;
-  top:18mm;
-  margin:2%;
-  width:96%;
-  z-index:0;	
-}
-.submit{
-  background-color:rgb(0,110,0);
-  color:rgb(255,255,255);
-  border-style: solid;
-  border-color: green;
-  border-width: thin;
-  border-radius: 25px;
-  width: 12mm;
-  height: 8mm;
-}
-.spfbtn{
-  background-color: rgb(0,200,200);
-  color: white;
-}
-.blk{
-  color:rgb(0,200,200);
-  font-size: 24px;
-  text-decoration: blink;
-}
-.mspfi{
-  top:126mm;
-  left:66mm;
-  width:300px;
-  height:125px;
-}
-.shell-app{
-  width:98%;
-  height:12cm;
-  background:white;
-  box-sizing:border-box;
-  border-radius:8px;
-  padding:4px;
-  position:absolue;
-  z-index:0;
-}
-.ctofdiv{
-  margin-left:2%;
-  margin-right:2%;
-}
-.hrofdiv{
-  color:black;
-}
-.dropdown-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-.dropdown-menu.active {
-    max-height: 500px;
-}
-.nav-item {
-    position: relative;
-}
-.dropdown-menu {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    min-width: 200px;
-    background: white;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    border-radius: 0.375rem;
-    z-index: 50;
-}
-.dropdown-menu li {
-	padding: 0.5rem 1rem;
-	transition: background-color 0.2s;
-}
-.dropdown-menu li:hover {   
-	background-color: #f3f4f6;
-}
-.mobile-menu-button {
-	transition: transform 0.3s;
-}
-.mobile-menu-button.active {
-    transform: rotate(90deg);
+﻿<!DOCTYPE html>
 
-}
-#main {
-	background: #ffffff;
-	border-radius: 20px;
-	padding: 20px;
-	width: 94%;
-	margin: 3%;
-}
-.title{
-	font-size: 20mm;	
-}
-li, a, dt{
-	color: #555555;
-	font-size: 5mm;
-}
-dd {
-	margin-left: 50px;
-}
-.lihe {
-	color: #333333;
-	font-size: 8mm;
-}
-	</style>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Veland jnvc583</title>
 </head>
 <body>
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <image src="./logo.png"></image>
-                </div>
-                
-                <!-- 桌面导航 -->
-                <div class="hidden md:block">
-                    <ul class="flex space-x-8">
-                        <li class="nav-item">
-                            <button class="dropdown-toggle text-gray-900 hover:text-blue-500 px-3 py-2 flex items-center">
-                                产品 <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" class="block">VCSTICKMAN（开发中）</a></li>
-                                <li><a href="#" class="block">VCEDITOR（开发中）</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <button class="dropdown-toggle text-gray-900 hover:text-blue-500 px-3 py-2 flex items-center">
-                                资讯 <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" class="block">VCSTICKMAN的开发</a></li>
-                                <li><a href="#" class="block">VCEDITOR的开发</a></li>
-                            </ul>
-                        </li>
-						<li>
-						    <div style="background:white;width:100px;height:64px;"></div>
-						</li>
-                    </ul>
-                </div>
-                
-                <!-- 移动端菜单按钮 -->
-                <div class="md:hidden flex items-left">
-                    <button class="mobile-menu-button" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars text-gray-500 text-xl"></i>
-                    </button>
-                </div>
-            </div>
+    <div class="root">
+        <div class="menu">
+            <h1 class="purple">jnvc583</h1>
         </div>
-        
-        <!-- 移动端菜单 -->
-        <div class="mobile-menu md:hidden">
-            <div class="px-2 pt-2 pb-4 space-y-1">
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100">首页</a>
-                <div>
-                    <button class="dropdown-toggle-mobile w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 flex justify-between items-center" onclick="toggleSubMenu(this)">
-                        产品 <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
-                    </button>
-                    <ul class="dropdown-menu-mobile pl-4">
-                        <li><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">VCSTICKMAN（开发中）</a></li>
-                        <li><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">VCEDITOR（开发中）</a></li>
-                    </ul>
+        <hr />
+        <div class="main">
+            <div class="sticky">
+                <div class="avatar">
+                    <img src="./avatar.png" width="300" height="300" />
                 </div>
-                <div>
-                    <button class="dropdown-toggle-mobile w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 flex justify-between items-center" onclick="toggleSubMenu(this)">
-                        资讯 <i class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
-                    </button>
-                    <ul class="dropdown-menu-mobile pl-4">
-                        <li><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">VCSTICKMAN的开发</a></li>
-                        <li><a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:bg-gray-100">VCEDITOR的开发</a></li>
+                <h1 class="purple">jnvc583</h1>
+                <div class="lightgray">
+                    <p>大家好，我是jnvc583。</p>
+                    <p>我叫陈韵泽。</p>
+                </div>
+                <div class="fangshi">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/jnvc583/">
+                                <nobr>
+                                    <i class="fab fa-github"></i>
+                                    Github
+                                </nobr>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
+            <div class="content">
+                <div class="projects">
+                    <h2>📕 项目：</h2>
+                    <ul>
+                        <li><a href="https://jnvc583.github.io/color-picker/">颜色选取器（1.0.1）</a></li>
+                    </ul>
+                </div>
+                <div class="posts">
+                    <h2>文章：</h2>
+                    <hr />
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="https://sexitor.github.io/posts/vl5p/index.html" target="_blank"><h1>维兰德四剑客+张善宇=维兰高科五人组。</h1></a>
+                                <p>这5人是什么样的？一起来看看！<br>作者：许梓浩（Sexitor）<br>Date: October 19th, 2025, Sun.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-    <div id="main">
-		<h1 align="center" class="title">VC创意</h1>
-		<hr/>
-		<p class="lihe">项目（产品）</p>
-		<dl>
-			<dt>开发工具</dt>
-			<dd><a href="https://jnvc583.github.io/color-picker/">颜色选取器（color-picker）1.0.1</a></dd>
-		</dl>
-	</div>
-	<script src="./menu.js"></script>
-	<script>
-// 桌面端下拉菜单
-document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-    const menu = toggle.nextElementSibling;
-    toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        // 关闭其他打开的菜单
-        document.querySelectorAll('.dropdown-menu').forEach(m => {
-            if (m !== menu) m.classList.remove('active');
-        });  
-        menu.classList.toggle('active');
-    });
-});
-// 点击页面其他区域关闭菜单
-document.addEventListener('click', () => {
-    document.querySelectorAll('.dropdown-menu').forEach(menu => {
-        menu.classList.remove('active');
-    });
-});
-        
-// 移动端菜单切换
-function toggleMobileMenu() {
-    const button = document.querySelector('.mobile-menu-button');
-    const menu = document.querySelector('.mobile-menu');
-    button.classList.toggle('active');
-    menu.classList.toggle('active');
-}    
-// 移动端子菜单切换
-function toggleSubMenu(button) {
-    const icon = button.querySelector('i');
-    const menu = button.nextElementSibling;
-    icon.classList.toggle('transform');
-    icon.classList.toggle('rotate-180');
-    menu.classList.toggle('hidden');
-}
-	</script>
+    </div>
 </body>
 </html>
