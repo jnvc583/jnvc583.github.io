@@ -14,6 +14,7 @@ body {
 .main {
     width: 100%;
     display: flex;
+    margin-bottom: 50px;
 }
 .content {
     margin-top: 21.44px;
@@ -101,4 +102,14 @@ a button {
     border-color: rgb(200,200,200);
     background: rgb(0, 131, 65);
     color: white;
+}
+.smallavt {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: rgb(200,200,200);
+    border-width: 1px;
+    overflow: hidden;
 }
