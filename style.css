@@ -2,9 +2,6 @@ body {
     margin: 0;
     background: rgb(126, 9, 204);
 }
-* {
-    user-select: none;
-}
 .root {
     position: absolute;
     left: 0;
@@ -34,6 +31,10 @@ body {
 }
 .lightgreen {
     color: rgb(181,230,29);
+}
+.lightblue {
+    color: rgb(29,161,242);
+    text-decoration: none;
 }
 .purple {
     color: rgb(150,50,250);
@@ -104,11 +105,11 @@ ul {
 .list {
     margin-top: 50px;
 }
-.diary table {
+.diary table, .diary th, .diary td {
     border-style: solid;
     border-width: 1px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    border-spacing: 0;
 }
 a button {
     padding: 4px;
@@ -138,4 +139,11 @@ z {
 }
 span {
     color: orange;
+}
+.list li {
+    margin-bottom: 30px;
+}
+.kttext {
+    font-family: '楷体';
+    font-size: 18px;
 }
