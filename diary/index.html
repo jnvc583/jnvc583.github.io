@@ -5,6 +5,9 @@
     <meta http-equiv="Content-Type" charset="GBK"/>
     <link rel="stylesheet" href="./../style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        #diary-search{width:100%;max-width:420px;padding:8px 10px;margin:10px 0;border:1px solid #ccc;border-radius:4px}
+    </style>
     <title>My diary</title>
 </head>
 <body>
@@ -41,6 +44,8 @@
             <div class="content">
                 <a href="./../index.html"><button>返回主页</button></a>
                 <div class="diary">
+                    <label for="diary-search">搜索日记（按标题或日期）：</label>
+                    <input id="diary-search" type="search" placeholder="输入关键词，如日期或标题的一部分" />
                     <h1>日记列表</h1>
                     <hr />
                     <p>第1篇和第4篇找不到了！</p>
@@ -66,6 +71,11 @@
                             <td><h2 class="lightgreen">人人都爱鹅卵石</h2></td>
                         </tr>
                         <tr>
+                            <th><a href="./2025-12-10/index.html"><h3>第<span>144</span>篇</h3></a></th>
+                            <td>Date: 2025-12-10</td>
+                            <td><h2 class="lightgreen">李昊雨踢球闯祸了</h2></td>
+                        </tr>
+                        <tr>
                             <th><a href="./2025-12-12/index.html"><h3>第<span>145</span>篇</h3></a></th>
                             <td>Date: 2025-12-12</td>
                             <td><h2 class="lightgreen">去学校</h2></td>
@@ -77,5 +87,21 @@
         </div>
     </div>
     <script src="./../date.js"></script>
+    <script>
+    (function(){
+        var input = document.getElementById('diary-search');
+        if(!input) return;
+        var rows = Array.prototype.slice.call(document.querySelectorAll('.diary table tbody tr'));
+        function filter(){
+            var q = input.value.trim().toLowerCase();
+            if(!q){ rows.forEach(function(r){ r.style.display = ''; }); return; }
+            rows.forEach(function(r){
+                var text = r.innerText.toLowerCase();
+                r.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+            });
+        }
+        input.addEventListener('input', filter);
+    })();
+    </script>
 </body>
 </html>
