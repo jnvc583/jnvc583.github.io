@@ -1,7 +1,3 @@
-/* 简单评论板：在每篇日记页面中寻找 #talk-board 并渲染评论 UI
-   存储：localStorage，键为 'comments:' + location.pathname
-   功能：发布、显示、删除（本地、即时），对输入做简单转义防 XSS
-*/
 (function(){
     function escapeHtml(s){
         return String(s).replace(/[&<>"']/g, function(c){
@@ -32,8 +28,16 @@
             var name = escapeHtml(c.name || '匿名');
             var time = new Date(c.t).toLocaleString();
             var body = escapeHtml(c.text).replace(/\n/g,'<br>');
+            var delHtml = '';
+            try{
+                // When using Supabase, do not show delete UI by default to avoid allowing anonymous deletes.
+                // To intentionally enable client-side deletes with Supabase, set `window.SUPABASE_ALLOW_DELETE = true` before loading talk.js.
+                if(!(useSupabase() && !window.SUPABASE_ALLOW_DELETE)){
+                    delHtml = '<span class="del" data-i="'+idx+'">删除</span>';
+                }
+            }catch(e){ /* ignore */ }
             return '<div class="comment" data-i="'+idx+'">'
-                +'<div class="meta">'+name+' · '+time+'<span class="del" data-i="'+idx+'">删除</span></div>'
+                +'<div class="meta">'+name+' · '+time + (delHtml ? delHtml : '') +'</div>'
                 +'<div class="body">'+body+'</div>'
                 +'</div>';
         }
