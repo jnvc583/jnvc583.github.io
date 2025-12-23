@@ -11,3 +11,5 @@ if (getCurrentDate() === "12-13" || getCurrentDate() === "12-14") {
     document.documentElement.style.webkitFilter = "grayscale(100%)";
     avt.src = "./sadavatar.png";
 }
+console.log(document.querySelector('.menu').offsetHeight);
+document.querySelector('.sticky').setAttribute('style', 'top:' + document.querySelector('.menu').offsetHeight + 'px;')
