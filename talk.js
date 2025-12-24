@@ -1,8 +1,128 @@
+/* 简单评论板：在每篇日记页面中寻找 #talk-board 并渲染评论 UI
+   存储：localStorage，键为 'comments:' + location.pathname
+   功能：发布、显示、删除（本地、即时），对输入做简单转义防 XSS
+*/
 (function(){
     function escapeHtml(s){
         return String(s).replace(/[&<>"']/g, function(c){
             return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
         });
+    }
+
+    // sanitize user-provided HTML using a small whitelist
+    function sanitizeHtml(dirty){
+        if(!dirty) return '';
+        var tmp = document.createElement('div');
+        // convert newlines to <br> so plaintext line breaks are preserved
+        var withBreaks = String(dirty).replace(/\n/g,'<br>');
+        tmp.innerHTML = withBreaks;
+
+        var defaultWhitelist = {
+            'b': ['class'], 'i': ['class'], 'em': ['class'], 'strong': ['class'], 'a': ['href','title','class','style'],
+            'code': ['class','style'], 'pre': ['class','style'], 'br': [], 'p': ['class','style'], 'ul': ['class'], 'ol': ['class'], 'li': ['class','style'], 'span': ['class','style']
+        };
+
+        // Build effective whitelist by merging defaults with optional user config:
+        // - window.TALK_ALLOWED_TAGS: array or comma/space-separated string of tags to allow (extends/replaces defaults if provided)
+        // - window.TALK_ALLOWED_ATTRS: object mapping tag -> array of allowed attributes to add
+        var whitelist = {};
+        var userTags = window.TALK_ALLOWED_TAGS;
+        if(userTags){
+            var tags = Array.isArray(userTags) ? userTags : String(userTags).split(/\s*,\s*|\s+/);
+            tags.forEach(function(t){
+                t = String(t).toLowerCase();
+                whitelist[t] = defaultWhitelist[t] ? defaultWhitelist[t].slice() : [];
+            });
+        }else{
+            for(var k in defaultWhitelist) if(defaultWhitelist.hasOwnProperty(k)) whitelist[k] = defaultWhitelist[k].slice();
+        }
+
+        // Merge user-provided attribute map
+        var userAttrMap = window.TALK_ALLOWED_ATTRS;
+        if(userAttrMap && typeof userAttrMap === 'object'){
+            Object.keys(userAttrMap).forEach(function(tag){
+                var arr = Array.isArray(userAttrMap[tag]) ? userAttrMap[tag] : String(userAttrMap[tag]).split(/\s*,\s*|\s+/);
+                whitelist[tag] = (whitelist[tag] || []).concat(arr);
+            });
+        }
+
+        // dedupe attributes lists
+        Object.keys(whitelist).forEach(function(tag){
+            var seen = {};
+            whitelist[tag] = (whitelist[tag] || []).filter(function(a){ a = String(a).toLowerCase(); if(seen[a]) return false; seen[a]=true; return true; });
+        });
+
+        function sanitizeStyle(v){
+            if(!v) return '';
+            var parts = String(v).split(';');
+            var allowed = ['color','background-color','font-weight','font-style','text-decoration','font-size'];
+            var out = [];
+            parts.forEach(function(p){
+                var kv = p.split(':');
+                if(kv.length < 2) return;
+                var prop = kv[0].trim().toLowerCase();
+                var val = kv.slice(1).join(':').trim();
+                if(allowed.indexOf(prop) === -1) return;
+                var low = val.toLowerCase();
+                if(/url\(|expression|javascript:|<|>/.test(low)) return;
+                // allow hex, named colors, rgb/rgba, numbers with units
+                var ok = false;
+                if(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(val)) ok = true;
+                else if(/^[a-z]+$/i.test(val)) ok = true;
+                else if(/^rgba?\(\s*\d+\s*,\s*\d+\s*,\s*\d+(?:\s*,\s*(?:0|1|0?\.\d+))?\s*\)$/i.test(val)) ok = true;
+                else if(/^[-+]?\d+(?:px|em|rem|%)?$/.test(val)) ok = true;
+                if(ok) out.push(prop+':'+val);
+            });
+            return out.join(';');
+        }
+
+        function clean(node){
+            var nodeType = node.nodeType;
+            if(nodeType === 3) return; // text node ok
+            if(nodeType !== 1) return; // skip non-element non-text
+
+            var name = node.nodeName.toLowerCase();
+            if(!whitelist.hasOwnProperty(name)){
+                // replace disallowed element with its text content
+                var txt = document.createTextNode(node.textContent);
+                node.parentNode.replaceChild(txt, node);
+                return;
+            }
+
+            // sanitize attributes
+            var allowedAttrs = whitelist[name];
+            var attrs = Array.prototype.slice.call(node.attributes || []);
+            attrs.forEach(function(a){
+                var an = a.name.toLowerCase();
+                if(allowedAttrs.indexOf(an) === -1){
+                    node.removeAttribute(a.name);
+                }else{
+                    if(an === 'href'){
+                        var v = node.getAttribute('href') || '';
+                        if(!/^(https?:|mailto:|\/|#)/i.test(v)){
+                            node.removeAttribute('href');
+                        }
+                    }else if(an === 'class'){
+                        var cv = node.getAttribute('class') || '';
+                        // allow only letters, numbers, dash, underscore and spaces
+                        if(!/^[A-Za-z0-9_\- ]*$/.test(cv)) node.removeAttribute('class');
+                    }else if(an === 'style'){
+                        var sv = node.getAttribute('style') || '';
+                        var cleaned = sanitizeStyle(sv);
+                        if(cleaned) node.setAttribute('style', cleaned);
+                        else node.removeAttribute('style');
+                    }
+                }
+            });
+
+            // recurse children (copy snapshot because cleaning may modify childNodes)
+            var children = Array.prototype.slice.call(node.childNodes);
+            children.forEach(clean);
+        }
+
+        var children = Array.prototype.slice.call(tmp.childNodes);
+        children.forEach(clean);
+        return tmp.innerHTML;
     }
 
     // small helper to call backend if configured
@@ -27,7 +147,7 @@
         function renderComment(c, idx){
             var name = escapeHtml(c.name || '匿名');
             var time = new Date(c.t).toLocaleString();
-            var body = escapeHtml(c.text).replace(/\n/g,'<br>');
+            var body = sanitizeHtml(c.text);
             var delHtml = '';
             try{
                 // When using Supabase, do not show delete UI by default to avoid allowing anonymous deletes.
