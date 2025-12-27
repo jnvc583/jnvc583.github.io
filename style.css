@@ -144,6 +144,8 @@ z {
 }
 span {
     color: orange;
+    font-weight: bold;
+    font-size: 30px;
 }
 .list li {
     margin-bottom: 30px;
@@ -151,4 +153,10 @@ span {
 .kttext {
     font-family: '楷体';
     font-size: 18px;
+}
+.highbox {
+    background-color: rgb(173, 173, 173);
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 20px;
 }
