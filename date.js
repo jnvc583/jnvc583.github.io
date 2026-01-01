@@ -12,4 +12,5 @@ if (getCurrentDate() === "12-13" || getCurrentDate() === "12-14") {
     avt.src = "./sadavatar.png";
 }
 console.log(document.querySelector('.menu').offsetHeight);
-document.querySelector('.sticky').setAttribute('style', 'top:' + document.querySelector('.menu').offsetHeight + 'px;')
+const topValue = document.querySelector('.menu').offsetHeight + 'px';
+Array.from(document.getElementsByClassName('sticky')).forEach(el => el.style.top = topValue);
