@@ -7,7 +7,7 @@ body {
 }
 * {
     font-family: '微软雅黑', monospace;
-    transition: all 1s;
+    transition: all .7s;
 }
 .root {
     position: absolute;
@@ -206,4 +206,9 @@ tr.esp {
     background-color: #fff; /* 按钮背景颜色 */
     color: #333; /* 按钮字体颜色 */
     border-color: #555; /* 按钮边框颜色 */
+}
+
+.dark-mode #talk-board .tb {
+    background-color: #1e1e1e; /* 留言板背景颜色 */
+    color: #ffffff; /* 留言板字体颜色 */
 }
