@@ -51,3 +51,15 @@ video, .content img {
 #performlist tbody {
     background-color: #fedcbd;
 }
+.dark-mode #scriptpaper {
+    background: linear-gradient(-150deg, transparent 1.5em, #4b3b2b 0);
+}
+.dark-mode #performlist tbody {
+    background-color: #4b3b2b;
+}
+.dark-mode #performlist thead {
+    background-color: #2f8895;
+}
+.dark-mode video, .dark-mode content img {
+    filter: brightness(0.8);
+}
