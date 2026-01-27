@@ -135,7 +135,7 @@
         var key = 'comments:' + location.pathname;
 
         var style = document.createElement('style');
-        style.textContent = '#talk-board .tb{border:1px solid #ddd;padding:12px;border-radius:6px;margin-top:12px;background:#fff}#talk-board form input,#talk-board form textarea{width:100%;box-sizing:border-box;padding:8px;margin:6px 0;border:1px solid #ccc;border-radius:4px}#talk-board .comment{border-top:1px solid #f0f0f0;padding:8px 0}#talk-board .meta{font-size:12px;color:#666}#talk-board .del{color:#c00;cursor:pointer;margin-left:8px}';
+        style.textContent = '#talk-board .tb{border:1px solid #ddd;padding:12px;border-radius:6px;margin-top:12px;background:#fff}#talk-board form input,#talk-board form textarea{width:100%;box-sizing:border-box;padding:8px;margin:6px 0;border:1px solid #ccc;border-radius:4px}#talk-board .comment{border-top:1px solid #f0f0f0;padding:8px 0}#talk-board .meta{font-size:12px;color:#666}#talk-board .del{color:#c00;cursor:pointer;margin-left:8px} button[type="submit"]{background-color:#4CAF50;color:white;padding:10px 16px;border:none;border-radius:4px;cursor:pointer}button[type="submit"]:hover{background-color:#45a049}';
         document.head.appendChild(style);
 
         // local storage functions
@@ -164,7 +164,7 @@
 
         var html = '<div class="tb">'
             +'<form id="talk-form">'
-            +'<input id="talk-name" placeholder="昵称（可选）" maxlength="40">'
+            +'<input id="talk-name" placeholder="昵称（可选）" maxlength="40" required>'
             +'<textarea id="talk-text" placeholder="写下你的评论..." rows="4" required></textarea>'
             +'<button type="submit">发布评论</button>'
             +'</form>'
