@@ -6,7 +6,7 @@ body {
     background: rgb(126, 9, 204);
 }
 * {
-    font-family: '微软雅黑', monospace;
+    font-family: 'Cascadia Mono', '微软雅黑';
     transition: all .7s;
 }
 *::selection {
