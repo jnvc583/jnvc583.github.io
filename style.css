@@ -39,6 +39,19 @@ body {
     padding: 30px;
     box-shadow: 2px 2px 5px rgb(200,200,200);
 }
+.content::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.05) 1px,
+            transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    /* Allow clicking through the pattern layer */
+}
 .red {
     color: rgb(224,36,94);
 }
@@ -66,7 +79,7 @@ body {
 }
 .cyan::selection {
     background-color: rgb(0,255,191);
-    color: white;
+    color: black;
 }
 .lightblue {
     color: rgb(29,161,242);
@@ -158,14 +171,54 @@ ul {
     margin: 20px 0;
     border-spacing: 0;
 }
+/* From Uiverse.io by cssbuttons-io */
 a button {
-    padding: 4px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(200,200,200);
-    background: rgb(0, 131, 65);
-    color: white;
+    --bcolor: rgb(78, 167, 45);
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--bcolor);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--bcolor);
+}
+
+a button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--bcolor);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+a button:hover {
+    color: #fff;
+}
+
+a button:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+}
+
+a button:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+a button:active:before {
+    background: rgb(48, 137, 15);
+    transition: background 0s;
 }
 .smallavt {
     display: inline-block;
@@ -210,15 +263,52 @@ tr.esp {
     background-color: rgb(133, 220, 255);
 }
 #dark-mode-toggle {
-    margin-left: 20px;
-    padding: 6px;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(200,200,200);
-    background: rgb(50, 50, 50);
-    color: white;
+    --bcolor: rgb(84, 84, 84);
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    position: relative;
     cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--bcolor);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--bcolor);
+}
+
+#dark-mode-toggle:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--bcolor);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+#dark-mode-toggle:hover {
+    color: #fff;
+}
+
+#dark-mode-toggle:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+}
+
+#dark-mode-toggle:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+#dark-mode-toggle:active:before {
+    background: rgb(39, 39, 39);
+    transition: background 0s;
 }
 .popupbtn {
     background-color: rgb(250,250,250);
@@ -264,12 +354,6 @@ pre {
     background-color: #1e1e1e; /* 便签背景颜色 */
     border-color: #444; /* 便签边框颜色 */
     color: #ffffff; /* 便签字体颜色 */
-}
-
-.dark-mode #dark-mode-toggle {
-    background-color: #fff; /* 按钮背景颜色 */
-    color: #333; /* 按钮字体颜色 */
-    border-color: #555; /* 按钮边框颜色 */
 }
 
 .dark-mode #talk-board .tb {

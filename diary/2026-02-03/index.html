@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet" href="./../../style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>创客培训日记 - 2</title>
+    <style>
+        header {
+            font-size: 150%;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #00ffbf;
+        }
+
+        header::selection {
+            background-color: #00ffbf;
+            color: black;
+        }
+
+        .colourful {
+            display: inline-block;
+            padding: 2px 6px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .colourful::selection {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <div class="menu">
+            <a href="./../index.html">
+                <h1 class="purple">jnvc583/diary</h1>
+            </a>
+        </div>
+        <hr />
+        <div class="main">
+            <div class="stickybox">
+                <div class="sticky">
+                    <div id="avatar">
+                        <img src="./../../avatar.png" width="300" height="300" />
+                    </div>
+                    <h1 class="purple">jnvc583</h1>
+                    <div class="lightgray">
+                        <p>大家好，我是jnvc583。</p>
+                        <p>我叫陈韵泽。</p>
+                    </div>
+                    <div class="fangshi">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/jnvc583/">
+                                    <nobr>
+                                        <i class="fab fa-github"></i>
+                                        Github
+                                    </nobr>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <a href="./../index.html"><button>返回日记主页</button></a>
+                <h1>第<span>160</span>篇 日记</h1>
+                <h2>2026年02月03日 阴 Tue.</h2>
+                <h2>
+                    <div class="lightgreen">26/02创客培训日记：</div>第二天
+                </h2>
+                <p>今天上午，我和昨天一样，来到<span class="yellow">九江外国语学校</span>里面的<span>Jiujiang AI Science And Technology Innovation Base</span>.进入教室后，也是和昨天一样的流程。</p>
+                <section id="s1"></section>
+                <p>正在更新中……</p>
+                <div id="talk-board"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import Modal from 'https://jnvc583.github.io/vmsg/modal.js';
+        const info1 = document.getElementById('info1');
+        info1.addEventListener('click', () => {
+            const m = new Modal({
+                title: '九江外国语学校',
+                style: 'mac',
+                html: '<p><span class="yellow">九江外国语学校</span>是<span class="cyan">江西省九江市</span>的一所重点中学，也是我们参加创客培训的地点。</p>',
+                footer: [
+                    { text: '确定', className: 'btn-primary', onClick: () => m.close() }
+                ]
+            });
+            m.open();
+        });
+    </script>
+    <script src="./../../date.js"></script>
+    <script>
+        window.SUPABASE_URL = 'https://oqgaeokvldbimeewpqsa.supabase.co';
+        window.SUPABASE_KEY = 'sb_publishable_m-Z7t8LnPuAP7b__2xcF1A_lWopDkuJ';
+    </script>
+    <script src="./../../talk.js"></script>
+</body>
+
+</html>
