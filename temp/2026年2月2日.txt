@@ -21,4 +21,10 @@ Jiujiang AI Science And Technology Innovation Base
 通过旋钮值（4095）*4095 = HEX值 改变颜色。
 我按就亮，不按就不亮。
 温湿度传感器检测温湿度。
-舵机模块。
+舵机模块。用旋钮来控制舵机的角度
+超声波传感器，GND接GND，
+
+
+2026年2月4日
+LaserMaker Software
+平面设计
