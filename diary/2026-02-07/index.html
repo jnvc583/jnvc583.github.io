@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet" href="./../../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>不同位数的bmp图像</title>
+</head>
+
+<body>
+    <div class="root">
+        <div class="menu">
+            <a href="./../index.html">
+                <h1 class="purple">jnvc583/diary</h1>
+            </a>
+        </div>
+        <hr />
+        <div class="main">
+            <div class="stickybox">
+                <div class="sticky">
+                    <div id="avatar">
+                        <img src="./../../avatar.png" width="300" height="300" />
+                    </div>
+                    <h1 class="purple">jnvc583</h1>
+                    <div class="lightgray">
+                        <p>大家好，我是jnvc583。</p>
+                        <p>我叫陈韵泽。</p>
+                    </div>
+                    <div class="fangshi">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/jnvc583/">
+                                    <nobr>
+                                        <i class="fab fa-github"></i>
+                                        Github
+                                    </nobr>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <a href="./../index.html"><button>返回日记主页</button></a>
+                <h1>第<span>161</span>篇 日记</h1>
+                <h2>2026年02月07日 阴 Sat.</h2>
+                <h2>
+                    <div class="lightgreen">软件知识：</div>不同位数的bmp图像
+                </h2>
+                <p>这是一个bmp格式的表情包，它的位数为<span>24</span>位（可以显示2<sup>24</sup>=16,777,216种颜色），大小为118KB：</p>
+                <img src="./wocao.bmp">
+                <p>但如果将它转换为<span>8</span>位（可以显示256种颜色）bmp格式，大小会变为40.1KB，而且本来的肤色会变成这样：</p>
+                <img src="./wocao8.bmp">
+                <p>这是因为<span>8</span>位bmp图像使用调色板来存储颜色信息，而调色板只能包含256种颜色。当原始图像中的颜色超过256种时，转换工具会选择最接近的颜色来替代，这就导致了颜色失真和图像质量下降，看上去很怪。</p>
+                <p>如果再把它转换为<span>4</span>位（只能显示16种颜色）bmp格式，大小会变为19.6KB：</p>
+                <img src="./wocao4.bmp">
+                <p>这时图像质量就更差了，因为<span>4</span>位bmp图像的调色板只能包含16种颜色，远远不能满足原始图像的需求，所以颜色失真更加严重，看上去就像素化了。</p>
+                <p>最后我把它转换为<span>1</span>位bmp格式，大小会变为5.52KB：</p>
+                <img src="./wocao1.bmp">
+                <p>这时图像质量就非常差了，因为<span>1</span>位bmp图像只能显示两种颜色（就是纯黑和纯白），完全无法表达原始图像的细节和颜色信息，看上去就像一个黑白的轮廓图了。</p>
+                <p>我还发现一个问题，就是一个logo图片，用png格式保存时，大小为1.57KB，但用bmp格式保存时，大小会变为5.52KB，而且位数为1位。这说明png格式在压缩图像数据方面比bmp格式更高效。</p>
+                <img src="v1.bmp" title="1位bmp图像"><img src="v1.png" title="png图像">
+                <p>再来看看我用24位bmp格式保存的涂鸦，依次转换至8位、4位、1位：</p>
+                <img src="24.bmp" title="24位bmp图像"><img src="8.bmp" title="8位bmp图像"><img src="4.bmp" title="4位bmp图像"><img src="1.bmp" title="1位bmp图像">
+                <p>下面的表格总结了不同位数下的bmp图像的各种颜色会变成什么另外的颜色：</p>
+                <table border="1" cellpadding="5" cellspacing="0" style="margin-top: 10px; border-color: #888; border-style: solid;">
+                    <tr>
+                        <th>24位bmp</th>
+                        <th>8位bmp</th>
+                        <th>4位bmp</th>
+                        <th>1位bmp</th>
+                    </tr>
+                    <tr>
+                        <td style="color: #f00710;">红色(#f00710)</td>
+                        <td style="color: #ff0000;">红色(#ff0000)</td>
+                        <td style="color: #ff0000;">红色(#ff0000)</td>
+                        <td>黑色</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #ffa500;">橙色(#ffa500)</td>
+                        <td style="color: #8b4513;">（有点像棕色）</td>
+                        <td style="color: #808000;">橄榄绿</td>
+                        <td>黑色</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #ffff00;">黄色</td>
+                        <td style="color: #ffff00;">黄色</td>
+                        <td style="color: #ffff00;">黄色</td>
+                        <td>白色</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #2ff12f;">浅绿色</td>
+                        <td style="color: #2ff12f;">浅绿色</td>
+                        <td style="color: #ffff00;">黄色</td>
+                        <td>白色</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #3891c5;">浅蓝色</td>
+                        <td style="color: #4090c0;">浅蓝色</td>
+                        <td style="color: #c0c0c0;">灰色</td>
+                        <td>白色</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #0000ff;">蓝色</td>
+                        <td style="color: #0000ff;">蓝色</td>
+                        <td style="color: #0000ff;">蓝色</td>
+                        <td>黑色</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #bf00ff;">紫色</td>
+                        <td style="color: #bf00ff;">紫色</td>
+                        <td style="color: #4b0082;">更深的紫色</td>
+                        <td>黑色</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #ff00ff;">粉色</td>
+                        <td style="color: #c0c0c0;">灰粉色</td>
+                        <td style="color: #c0c0c0;">灰色</td>
+                        <td>白色</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #8b4513;">棕色</td>
+                        <td style="color: #8b4513;">棕色</td>
+                        <td style="color: #808000;">橄榄绿</td>
+                        <td>黑色</td>
+                    </tr>
+                </table>
+                <p>总之来说，不同位数的bmp图像在颜色表现上存在显著差异。24位bmp图像可以显示丰富的颜色，而位数越低，图像的颜色表现就越受限，最终导致图像质量下降。如果你需要保存图像为bmp格式，建议使用24位或更高位数以保持图像质量，如果你的图片对色彩要求不高，而且想要让图像文件更小，可以考虑使用8位的bmp格式。而4位的bmp图像则会进一步降低图像质量，因此不建议使用。1位就完全失去了图像的细节和颜色信息，只保留了黑白轮廓，而且纯黑白的图像用png格式保存会更高效。</p>
+                <div id="talk-board"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./../../date.js"></script>
+    <script>
+        window.SUPABASE_URL = 'https://oqgaeokvldbimeewpqsa.supabase.co';
+        window.SUPABASE_KEY = 'sb_publishable_m-Z7t8LnPuAP7b__2xcF1A_lWopDkuJ';
+    </script>
+    <script src="./../../talk.js"></script>
+</body>
+
+</html>

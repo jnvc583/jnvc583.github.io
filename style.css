@@ -121,6 +121,32 @@ body {
     background-color: #ff00bf;
     color: white;
 }
+header {
+    font-size: 150%;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #00ffbf;
+}
+
+header::selection {
+    background-color: #00ffbf;
+    color: black;
+}
+
+.colourful {
+    display: inline-block;
+    padding: 2px 6px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.colourful::selection {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    color: black;
+}
 .lightgray, i, .fangshi a {
     color: inherit;
 }
