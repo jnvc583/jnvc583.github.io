@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet" href="./../../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>创客培训日记 - 2</title>
+    <style>
+        header {
+            font-size: 150%;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #00ffbf;
+        }
+
+        header::selection {
+            background-color: #00ffbf;
+            color: black;
+        }
+
+        .colourful {
+            display: inline-block;
+            padding: 2px 6px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .colourful::selection {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <div class="menu">
+            <a href="./../index.html">
+                <h1 class="purple">jnvc583/diary</h1>
+            </a>
+        </div>
+        <hr />
+        <div class="main">
+            <div class="stickybox">
+                <div class="sticky">
+                    <div id="avatar">
+                        <img src="./../../avatar.png" width="300" height="300" />
+                    </div>
+                    <h1 class="purple">jnvc583</h1>
+                    <div class="lightgray">
+                        <p>大家好，我是jnvc583。</p>
+                        <p>我叫陈韵泽。</p>
+                    </div>
+                    <div class="fangshi">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/jnvc583/">
+                                    <nobr>
+                                        <i class="fab fa-github"></i>
+                                        Github
+                                    </nobr>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <a href="./../index.html"><button>返回日记主页</button></a>
+                <h1>第<span>160</span>篇 日记</h1>
+                <h2>2026年02月03日 阴 Tue.</h2>
+                <h2>
+                    <div class="lightgreen">26/02创客培训日记：</div>第二天
+                </h2>
+                <p>今天上午，我和昨天一样，来到<span class="yellow">九江外国语学校</span>里面的<span>Jiujiang AI Science And Technology Innovation Base</span>.进入教室后，也是和昨天一样的流程。</p>
+                <section id="s1">
+                    <header>第一节 ~ “button”数字引脚</header>
+                    <p>我们的硬件中，有一个类似于按钮的引脚，它用于检测按钮是否被按下。它可以用数字引脚和模拟引脚来检测按钮状态。数字引脚的值为0或1，分别表示按钮未被按下和按钮被按下。模拟引脚的值在0到4095之间变化，表示按钮被按下的程度。</p>
+                    <p>杨老师说：“我们可以通过读取按钮引脚的值来判断按钮是否被按下。然后你们要写一个程序，就是检测这个按钮是否被按下，如果按钮被按下，就点亮LED灯，这个LED灯可以用灯带，只要在<span>‘模块’</span>中点击<span class="pink">显示器</span>选项卡，找到这个<span class="purple">LED灯带</span>（其实这种灯带也是一种显示器）。”</p>
+                    <p>于是，我们写了一个程序：</p>
+                    <img src="1.png" title="程序截图" width="400">
+                </section>
+                <section id="s2">
+                    <header>第二节 ~ 温湿度传感器</header>
+                    <p>杨老师见我们把按钮程序写好了，就让我们尝试使用温湿度传感器。他告诉我们，<span>温湿度传感器</span>可以测量环境的温度和湿度。</p>
+                    <p>我们可以通过读取<span>温湿度传感器</span>的值来获取当前的温度和湿度信息。然后我们可以把这些信息显示在<span class="lightgreen">掌控板</span>的屏幕上，或者通过串口输出到电脑上。</p>
+                    <p>我们写了一个程序，读取温湿度传感器的值，并显示在掌控板的屏幕上：</p>
+                    <img src="2.png" title="程序截图" width="400">
+                </section>
+                <section id="s3">
+                    <header>第三节 ~ 舵机模块</header>
+                    <p>杨老师说：“<span class="purple">舵机</span>模块是一种可以控制旋转角度的设备。我们可以通过编程来控制舵机的旋转，从而实现一些有趣的功能:读取旋钮的角度，然后让舵机也旋转到对应的角度，不过这里要用到<span class="green">映射</span>。”</p>
+                    <p>我们写了一个程序，读取旋钮的角度，并控制舵机旋转到对应的角度：</p>
+                    <img src="3.png" title="程序截图" width="400">
+                </section>
+                <section id="end">
+                    <header>总结</header>
+                    <p>今天的创客培训让我学到了很多关于ESP32掌控板的知识，包括如何使用按钮引脚、温湿度传感器和舵机模块。这些都是非常有趣的功能，我很期待在接下来的培训中学习更多的内容。</p>
+                </section>
+                <div id="talk-board"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./../../date.js"></script>
+    <script>
+        window.SUPABASE_URL = 'https://oqgaeokvldbimeewpqsa.supabase.co';
+        window.SUPABASE_KEY = 'sb_publishable_m-Z7t8LnPuAP7b__2xcF1A_lWopDkuJ';
+    </script>
+    <script src="./../../talk.js"></script>
+</body>
+
+</html>
