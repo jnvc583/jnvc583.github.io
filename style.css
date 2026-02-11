@@ -460,6 +460,15 @@ pre {
     border-bottom-color: #444; /* 模态对话框标题栏边框颜色 */
     color: #ffffff; /* 模态对话框标题栏字体颜色 */
 }
+.dark-mode .postcard {
+    background-color: rgb(44, 44, 44);
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(200, 200, 200, 0.7);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 .dark-mode pre {
     background-color: #333; /* 代码块背景颜色 */
     color: #ffffff; /* 代码块字体颜色 */
