@@ -60,6 +60,10 @@ body {
     position: relative;
     z-index: 20;
 }
+.content img {
+    margin: 10px;
+    border-radius: 8px;
+}
 .red {
     color: rgb(224, 36, 94);
 }
