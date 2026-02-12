@@ -333,6 +333,10 @@ span::selection {
 tr.esp {
     background-color: rgb(133, 220, 255);
 }
+tr.fsp {
+    background-color: rgb(127, 127, 127);
+    color: #000;
+}
 #dark-mode-toggle {
     --bcolor: rgb(84, 84, 84);
     font-family: inherit;
