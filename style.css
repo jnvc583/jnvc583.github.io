@@ -284,6 +284,7 @@ a button:active:before {
     transition: background 0s;
 }
 .smallavt {
+    margin: 0;
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -292,6 +293,9 @@ a button:active:before {
     border-color: rgb(200,200,200);
     border-width: 1px;
     overflow: hidden;
+}
+.smallavt img {
+    margin: 0;
 }
 .llg {
     color: rgb(250,250,250);
