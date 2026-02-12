@@ -225,6 +225,11 @@ ul {
     list-style-type: none;
     padding-left: 0;
 }
+.content p {
+    text-indent: 2em;
+    margin: 0;
+    font-size: larger;
+}
 .list {
     margin-top: 50px;
 }
@@ -278,7 +283,6 @@ a button:hover:before {
     top: -30px;
     left: -30px;
 }
-
 a button:active:before {
     background: rgb(48, 137, 15);
     transition: background 0s;
@@ -404,6 +408,17 @@ pre {
     border-radius: 5px;
     overflow-x: auto;
     font-family: 'Cascadia Mono', Consolas, monospace;
+}
+.comtext {
+    background-color: rgba(255,251,0,0.7);
+    padding: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255,191,0,0.7);
+    border-radius: 10px;
+}
+.comtext * {
+    font-family: '楷体';
 }
 
 /* 深色模式样式 */
