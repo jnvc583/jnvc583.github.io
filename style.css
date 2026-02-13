@@ -134,6 +134,14 @@ body {
     background-color: #ff00bf;
     color: white;
 }
+.lightgray2 {
+    color: #555;
+    text-decoration: none;
+}
+.lightgray2::selection {
+    background-color: #555;
+    color: white;
+}
 header {
     font-size: 150%;
     font-weight: bold;
