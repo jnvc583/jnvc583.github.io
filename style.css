@@ -247,53 +247,24 @@ ul {
     margin: 20px 0;
     border-spacing: 0;
 }
-/* From Uiverse.io by cssbuttons-io */
 a button {
-    --bcolor: rgb(78, 167, 45);
+    background: rgb(50, 201, 0);
     font-family: inherit;
     display: inline-block;
-    width: 8em;
-    height: 2.6em;
-    line-height: 2.5em;
+    min-width: 8em;
+    min-height: 2.6em;
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    border: 2px solid var(--bcolor);
-    transition: color 0.5s;
+    border: 2px solid rgb(0, 151, 0);
     z-index: 1;
     font-size: 17px;
     border-radius: 6px;
     font-weight: 500;
-    color: var(--bcolor);
+    color: white;
 }
-
-a button:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: var(--bcolor);
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-}
-
 a button:hover {
-    color: #fff;
-}
-
-a button:before {
-    top: 100%;
-    left: 100%;
-    transition: all 0.7s;
-}
-
-a button:hover:before {
-    top: -30px;
-    left: -30px;
-}
-a button:active:before {
-    background: rgb(48, 137, 15);
-    transition: background 0s;
+    background-color: rgb(0, 151, 0);
 }
 .smallavt {
     margin: 0;
