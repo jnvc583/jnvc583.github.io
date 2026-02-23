@@ -165,7 +165,7 @@
         var html = '<div class="tb">'
             +'<form id="talk-form">'
             +'<input id="talk-name" placeholder="昵称" maxlength="40" required>'
-            +'<textarea id="talk-text" placeholder="好言一句三冬暖，恶语伤人六月寒。" rows="4" required></textarea>'
+            +'<textarea id="talk-text" placeholder="流泻下一时的感受（支持HTML）" rows="4" required></textarea>'
             +'<button type="submit">发布评论</button>'
             +'</form>'
             +'<div id="talk-list">';
