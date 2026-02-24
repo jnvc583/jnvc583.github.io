@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet" href="./../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        #diary-search {
+            width: 100%;
+            max-width: 420px;
+            padding: 8px 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px
+        }
+
+        .dark-mode #diary-search {
+            background-color: #333;
+            color: #eee;
+            border-color: #555
+        }
+    </style>
+    <title>My diary</title>
+</head>
+
+<body>
+    <div class="root">
+        <div class="menu">
+            <a href="./../index.html">
+                <h1 class="purple">jnvc583/diary</h1>
+            </a>
+        </div>
+        <hr />
+        <div class="main">
+            <div class="stickybox">
+                <div class="sticky">
+                    <div id="avatar">
+                        <img src="./../avatar.png" width="300" height="300" />
+                    </div>
+                    <h1 class="purple">jnvc583</h1>
+                    <div class="lightgray">
+                        <p>大家好，我是jnvc583。</p>
+                        <p>我叫陈韵泽。</p>
+                    </div>
+                    <div class="fangshi">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/jnvc583/">
+                                    <nobr>
+                                        <i class="fab fa-github"></i>
+                                        Github
+                                    </nobr>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <a href="index.html"><button>返回日记主页</button></a>
+                <div class="diary">
+                    <label for="diary-search">搜索已被删除的日记（按第XXX篇）：</label>
+                    <input id="diary-search" type="search" placeholder="输入第XXX篇" />
+                    <hr />
+                    <h1>盘点那些已经被删除的日记</h1>
+                    <table>
+                        <caption></caption>
+                        <tr>
+                            <th colspan="3" align="left">第<span>108、109和110</span>篇因为含有一些暴力内容，作者不展示。</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3" align="left">第<span>111</span>篇因为含有一些色情内容，作者不展示。</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3" align="left">第<span>117、118、119、120</span>篇作者不愿展示。</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./../date.js"></script>
+    <script src="./../dark.js"></script>
+    <script>
+        (function () {
+            var input = document.getElementById('diary-search');
+            if (!input) return;
+            var rows = Array.prototype.slice.call(document.querySelectorAll('.diary table tbody tr'));
+            function filter() {
+                var q = input.value.trim().toLowerCase();
+                if (!q) { rows.forEach(function (r) { r.style.display = ''; }); return; }
+                rows.forEach(function (r) {
+                    var text = r.innerText.toLowerCase();
+                    r.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+                });
+            }
+            input.addEventListener('input', filter);
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,9 +1,7 @@
 // 自动在日记页插入“上一篇 / 下一篇”按钮
 (function(){
   try{
-    // 只在形如 /diary/YYYY-MM-DD/ 或 /diary/YYYY-MM-DD/index.html 的页面运行
-    var diaryEntryRe = /\/diary\/\d{4}-\d{2}-\d{2}(?:\/|\/index\.html)?$/;
-    if(!diaryEntryRe.test(location.pathname)) return;
+    
     if(document.querySelector('.prevnext')) return; // 避免重复
 
     var indexHref = '../index.html';
