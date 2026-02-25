@@ -1,7 +1,6 @@
 // 自动在日记页插入“上一篇 / 下一篇”按钮
 (function(){
   try{
-    
     if(document.querySelector('.prevnext')) return; // 避免重复
 
     var indexHref = '../index.html';
