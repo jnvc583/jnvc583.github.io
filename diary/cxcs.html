@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet" href="./../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        #diary-search {
+            width: 100%;
+            max-width: 420px;
+            padding: 8px 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px
+        }
+
+        .dark-mode #diary-search {
+            background-color: #333;
+            color: #eee;
+            border-color: #555
+        }
+        td, th {
+            border-color: #555;
+        }
+        tr :first-child, ul :first-child {
+            color: orange;
+            font-size: 24px;
+        }
+        tr :first-child::selection, ul :first-child::selection {
+            background-color: orange;
+        }
+        tr :nth-child(2), ul :nth-child(2) {
+            color: rgb(181,230,29);
+            font-size: 24px;
+        }
+        tr :nth-child(2)::selection, ul :nth-child(2)::selection {
+            background-color: rgb(181,230,29);
+        }
+        tr :nth-child(3), ul :nth-child(3) {
+            color: rgb(29,161,242);
+            font-size: 24px;
+        }
+        tr :nth-child(3)::selection, ul :nth-child(3)::selection {
+            background-color: rgb(29,161,242);
+        }
+        tr :nth-child(4), ul :nth-child(4) {
+            color: #bf00ff;
+            font-size: 24px;
+        }
+        tr :nth-child(4)::selection, ul :nth-child(4)::selection {
+            background-color: #bf00ff;
+        }
+        tr :nth-child(5), ul :nth-child(5) {
+            color: #ff00bf;
+            font-size: 24px;
+        }
+        tr :nth-child(5)::selection, ul :nth-child(5)::selection {
+            background-color: #ff00bf;
+        }
+    </style>
+    <title>各个人物出现次数统计</title>
+</head>
+
+<body>
+    <div class="root">
+        <div class="menu">
+            <a href="./../index.html">
+                <h1 class="purple">jnvc583/diary</h1>
+            </a>
+        </div>
+        <hr />
+        <div class="main">
+            <div class="stickybox">
+                <div class="sticky">
+                    <div id="avatar">
+                        <img src="./../avatar.png" width="300" height="300" />
+                    </div>
+                    <h1 class="purple">jnvc583</h1>
+                    <div class="lightgray">
+                        <p>大家好，我是jnvc583。</p>
+                        <p>我叫陈韵泽。</p>
+                    </div>
+                    <div class="fangshi">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/jnvc583/">
+                                    <nobr>
+                                        <i class="fab fa-github"></i>
+                                        Github
+                                    </nobr>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <a href="index.html"><button>返回日记主页</button></a>
+                <div class="diary">
+                    <label for="diary-search">搜索内容：</label>
+                    <input id="diary-search" type="search" placeholder="输入内容" />
+                    <hr />
+                    <h1>各个人物出现次数统计（不包括龙套角色）</h1>
+                    <h2>先来了解什么是1、2、3、4线角色：</h2>
+                    <ul>
+                        <li>1线角色：特别重要，出现次数一般在10次及以上，只有3个；</li>
+                        <li>2线角色：比较重要，出现次数一般在5~10次，有9个；</li>
+                        <li>3线角色：不太重要，出现次数一般在2~5次，有20个；</li>
+                        <li>4线角色：完全的龙套角色，一般只在第153篇出现了1次，有33个。</li>
+                    </ul>
+                    <p>（本表不包括龙套角色和作者，因为写龙套角色会浪费作者精力，而作者几乎每集都会出现）</p>
+                    <table class="rwcxcs">
+                        <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>姓名</th>
+                                <th>出现次数</th>
+                                <th>几线角色</th>
+                                <th>曾出现在哪几篇</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>许梓浩</td>
+                                <td>17</td>
+                                <td>1</td>
+                                <td>106,114,115,121,122,123,124,130,131,144,145,148,153,155,156,157,163</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>李钧宸</td>
+                                <td>14</td>
+                                <td>1</td>
+                                <td>105,106,121,122,123,130,131,143,145,150,153,154,157,163</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>周宏宇</td>
+                                <td>10</td>
+                                <td>1</td>
+                                <td>105,106,121,125,153,156,157,158,162,163</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>席老师</td>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>122,123,130,131,145,147,150,153,157</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>吴雨哲</td>
+                                <td>7</td>
+                                <td>2</td>
+                                <td>104,121,122,126,150,153,158</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>胡欣妍</td>
+                                <td>6</td>
+                                <td>2</td>
+                                <td>106,107,131,150,153,158</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>蔡盛楠</td>
+                                <td>6</td>
+                                <td>2</td>
+                                <td>122,131,150,153,158,162</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>陈睿铭</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>124,125,131,146,153</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>冯筱莜</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>122,123,124,150,153</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>杨锐</td>
+                                <td>5</td>
+                                <td>2</td>
+                                <td>124,131,146,150,153</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>熊老师</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>106,124,144,153</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>熊佳煜</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>122,123,150,153</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>刘子乐</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>122,123,124,153</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>妈妈</td>
+                                <td>4</td>
+                                <td>3</td>
+                                <td>106,107,113,116</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>柳晗予</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>122,124,150</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>刘艺凡</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>122,153,155</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>彭允熙</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>122,153,163</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>李昊雨</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>130,144,153</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>廖杨梓</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>131,150,153</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./../date.js"></script>
+    <script src="./../dark.js"></script>
+    <script>
+        (function () {
+            var input = document.getElementById('diary-search');
+            if (!input) return;
+            var rows = Array.prototype.slice.call(document.querySelectorAll('.diary table tbody tr'));
+            function filter() {
+                var q = input.value.trim().toLowerCase();
+                if (!q) { rows.forEach(function (r) { r.style.display = ''; }); return; }
+                rows.forEach(function (r) {
+                    var text = r.innerText.toLowerCase();
+                    r.style.display = text.indexOf(q) !== -1 ? '' : 'none';
+                });
+            }
+            input.addEventListener('input', filter);
+        })();
+    </script>
+</body>
+
+</html>
