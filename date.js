@@ -32,3 +32,5 @@ let backgroundCircle3 = document.createElement('span');
 addedbgbox.appendChild(backgroundCircle1);
 addedbgbox.appendChild(backgroundCircle2);
 addedbgbox.appendChild(backgroundCircle3);
+let charsetmeta = document.querySelector('meta');
+charsetmeta.setAttribute('charset', 'utf-8');

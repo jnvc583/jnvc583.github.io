@@ -128,6 +128,11 @@
     // small helper to call backend if configured
     function useBackend(){ return typeof window.COMMENTS_API === 'string' && window.COMMENTS_API.length>0; }
 
+    // Supabase mode can be disabled automatically on network failure
+    var supabaseEnabled = true;
+    function disableSupabase(){ supabaseEnabled = false; console.warn('talk.js: Supabase unavailable, using local storage fallback.'); }
+    function useSupabase(){ return supabaseEnabled && typeof window.SUPABASE_URL === 'string' && typeof window.SUPABASE_KEY === 'string' && window.SUPABASE_URL && window.SUPABASE_KEY; }
+
     document.addEventListener('DOMContentLoaded', function(){
         var board = document.getElementById('talk-board');
         if(!board) return;
@@ -192,7 +197,6 @@
         // Supabase support (serverless). If you set window.SUPABASE_URL and window.SUPABASE_KEY,
         // talk.js will use Supabase REST API. You must create a table `comments` with columns:
         // id (text, primary key), path (text), name (text), text (text), t (bigint)
-        function useSupabase(){ return typeof window.SUPABASE_URL === 'string' && typeof window.SUPABASE_KEY === 'string' && window.SUPABASE_URL && window.SUPABASE_KEY; }
         function supabaseHeaders(){ return { 'apikey': window.SUPABASE_KEY, 'Authorization': 'Bearer ' + window.SUPABASE_KEY, 'Content-Type':'application/json' }; }
         function apiGetSupabase(){
             var url = window.SUPABASE_URL.replace(/\/$/, '') + '/rest/v1/comments?path=eq.' + encodeURIComponent(location.pathname) + '&select=*';
@@ -208,7 +212,8 @@
         }
 
         // If Supabase configured, load from Supabase; else if backend configured, load from backend and render
-        if(useSupabase()){ apiGetSupabase().then(function(data){ comments = Array.isArray(data)?data:[]; var s=''; comments.forEach(function(c,i){ s+=renderComment(c,i); }); list.innerHTML = s; }).catch(function(){ /* ignore */ }); }
+        if(useSupabase()){ apiGetSupabase().then(function(data){ comments = Array.isArray(data)?data:[]; var s=''; comments.forEach(function(c,i){ s+=renderComment(c,i); }); list.innerHTML = s; }).catch(function(){ disableSupabase(); // network unavailable -> fallback localStorage
+        }); }
         else if(useBackend()){ apiGet().then(function(data){ comments = Array.isArray(data)?data:[]; var s=''; comments.forEach(function(c,i){ s+=renderComment(c,i); }); list.innerHTML = s; }).catch(function(){ /* ignore */ }); }
 
         form.addEventListener('submit', function(e){
@@ -221,7 +226,13 @@
             if(useSupabase()){
                 apiPostSupabase({ path: location.pathname, id: c.id, name: c.name, text: c.text, t: c.t }).then(function(saved){
                     return apiGetSupabase();
-                }).then(function(data){ comments = Array.isArray(data)?data:[]; var s=''; comments.forEach(function(cc,i){ s+=renderComment(cc,i); }); list.innerHTML = s; }).catch(function(){ alert('发布失败（网络或服务器错误）'); });
+                }).then(function(data){ comments = Array.isArray(data)?data:[]; var s=''; comments.forEach(function(cc,i){ s+=renderComment(cc,i); }); list.innerHTML = s; }).catch(function(){
+                    disableSupabase();
+                    comments.push(c);
+                    saveLocal(comments);
+                    list.insertAdjacentHTML('beforeend', renderComment(c, comments.length-1));
+                    alert('Supabase 不可用（网络/域名解析失败），已转为本地存储评论。');
+                });
             }else if(useBackend()){
                 apiPost({ path: location.pathname, comment: c }).then(function(saved){
                     // refresh list from server
@@ -246,7 +257,13 @@
                 if(useSupabase()){
                     var id = comments[i] && comments[i].id;
                     if(!id) return;
-                    apiDeleteSupabase(id).then(function(){ return apiGetSupabase(); }).then(function(data){ comments = Array.isArray(data)?data:[]; var s=''; comments.forEach(function(c, idx){ s += renderComment(c, idx); }); list.innerHTML = s; }).catch(function(){ alert('删除失败'); });
+                    apiDeleteSupabase(id).then(function(){ return apiGetSupabase(); }).then(function(data){ comments = Array.isArray(data)?data:[]; var s=''; comments.forEach(function(c, idx){ s += renderComment(c, idx); }); list.innerHTML = s; }).catch(function(){
+                        disableSupabase();
+                        comments.splice(i,1);
+                        saveLocal(comments);
+                        var s=''; comments.forEach(function(c, idx){ s += renderComment(c, idx); }); list.innerHTML = s;
+                        alert('Supabase 不可用，已切换到本地存储，并同步删除本地评论。');
+                    });
                 }else if(useBackend()){
                     var id = comments[i] && comments[i].id;
                     if(!id) return;
