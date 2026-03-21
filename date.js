@@ -18,7 +18,17 @@ let darkModeToggle = document.createElement('button');
 darkModeToggle.id = "dark-mode-toggle";
 darkModeToggle.innerText = "切换深色模式";
 document.querySelector('.menu').appendChild(darkModeToggle);
-
 console.log(document.querySelector('.menu').offsetHeight);
 const topValue = document.querySelector('.menu').offsetHeight + 'px';
 Array.from(document.getElementsByClassName('sticky')).forEach(el => el.style.top = topValue);
+
+let bgbox = document.createElement('div');
+bgbox.id = "bg";
+document.querySelector('.root').appendChild(bgbox);
+let addedbgbox = document.getElementById('bg');
+let backgroundCircle1 = document.createElement('span');
+let backgroundCircle2 = document.createElement('span');
+let backgroundCircle3 = document.createElement('span');
+addedbgbox.appendChild(backgroundCircle1);
+addedbgbox.appendChild(backgroundCircle2);
+addedbgbox.appendChild(backgroundCircle3);

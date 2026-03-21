@@ -3,7 +3,10 @@
 }
 body {
     margin: 0;
-    background: rgb(126, 9, 204);
+    background: rgb(250,250,250);
+}
+hr {
+    display: none;
 }
 * {
     font-family: 'Cascadia Mono', '微软雅黑';
@@ -29,34 +32,60 @@ body {
 .menu {
     position: fixed;
     width: 100%;
-    background-color: rgb(230,230,230);
-    box-shadow: 2px 0px 5px rgb(150,150,150);
-    z-index: 10;
+    background-color: rgba(230,230,230,0.05);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+    z-index: 100;
 }
 .content {
+    position: relative;
+    z-index: 50;
     margin: 21px 21px 21px 0;
-    background-color: rgb(250,250,250);
+    background-color: rgba(250,250,250,0.05);
     padding: 30px;
-    box-shadow: 2px 2px 5px rgb(200,200,200);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
 }
 .content::before {
     content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(90deg,
-            rgba(255, 255, 255, 0.05) 1px,
+            rgba(0, 0, 0, 0.05) 1px,
             transparent 1px),
-        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 20px 20px;
     pointer-events: none;
+    z-index: 10;
     /* Allow clicking through the pattern layer */
 }
-.red {
-    color: rgb(224,36,94);
+.content * {
+    position: relative;
+    z-index: 20;
 }
+.content img {
+    margin: 10px;
+    border-radius: 8px;
+}
+.red {
+    color: rgb(224, 36, 94);
+}
+
 .red::selection {
-    background-color: rgb(224,36,94);
+    background-color: rgb(224, 36, 94);
+    color: white;
+}
+.orange {
+    color: orange;
+}
+
+.orange::selection {
+    background-color: orange;
     color: white;
 }
 .yellow {
@@ -72,6 +101,14 @@ body {
 .lightgreen::selection {
     background-color: rgb(181,230,29);
     color: black;
+}
+.green {
+    color: green;
+    text-decoration: none;
+}
+.green::selection {
+    background-color: green;
+    color: white;
 }
 .cyan {
     color: rgb(0,255,191);
@@ -97,6 +134,48 @@ body {
     background-color: rgb(150,50,250);
     color: white;
 }
+.pink {
+    color: #ff00bf;
+    text-decoration: none;
+}
+.pink::selection {
+    background-color: #ff00bf;
+    color: white;
+}
+.lightgray2 {
+    color: #555;
+    text-decoration: none;
+}
+.lightgray2::selection {
+    background-color: #555;
+    color: white;
+}
+header {
+    font-size: 150%;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #00ffbf;
+}
+
+header::selection {
+    background-color: #00ffbf;
+    color: black;
+}
+
+.colourful {
+    display: inline-block;
+    padding: 2px 6px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.colourful::selection {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    color: black;
+}
 .lightgray, i, .fangshi a {
     color: inherit;
 }
@@ -110,8 +189,11 @@ body {
     border-radius: 10px;
     position: sticky;
     transition: all 1s;
-    background-color: rgb(250,250,250);
-    box-shadow: 2px 2px 5px rgb(200,200,200);
+    background-color: rgba(250,250,250,0.05);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+            2px 2px 15px rgba(0, 0, 0, 0.5);
+    z-index: 50;
 }
 .sticky:hover {
     color: black;
@@ -162,6 +244,11 @@ ul {
     list-style-type: none;
     padding-left: 0;
 }
+.content p {
+    text-indent: 2em;
+    margin: 0;
+    font-size: larger;
+}
 .list {
     margin-top: 50px;
 }
@@ -171,56 +258,27 @@ ul {
     margin: 20px 0;
     border-spacing: 0;
 }
-/* From Uiverse.io by cssbuttons-io */
 a button {
-    --bcolor: rgb(78, 167, 45);
+    background: rgb(50, 201, 0);
     font-family: inherit;
     display: inline-block;
-    width: 8em;
-    height: 2.6em;
-    line-height: 2.5em;
+    min-width: 8em;
+    min-height: 2.6em;
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    border: 2px solid var(--bcolor);
-    transition: color 0.5s;
+    border: 2px solid rgb(0, 151, 0);
     z-index: 1;
     font-size: 17px;
     border-radius: 6px;
     font-weight: 500;
-    color: var(--bcolor);
+    color: white;
 }
-
-a button:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: var(--bcolor);
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-}
-
 a button:hover {
-    color: #fff;
-}
-
-a button:before {
-    top: 100%;
-    left: 100%;
-    transition: all 0.7s;
-}
-
-a button:hover:before {
-    top: -30px;
-    left: -30px;
-}
-
-a button:active:before {
-    background: rgb(48, 137, 15);
-    transition: background 0s;
+    background-color: rgb(0, 151, 0);
 }
 .smallavt {
+    margin: 0;
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -230,11 +288,14 @@ a button:active:before {
     border-width: 1px;
     overflow: hidden;
 }
+.smallavt img {
+    margin: 0;
+}
 .llg {
     color: rgb(250,250,250);
 }
 z {
-    font-size: 12px;
+    font-size: 16px;
     display: block;
 }
 span {
@@ -261,6 +322,10 @@ span::selection {
 }
 tr.esp {
     background-color: rgb(133, 220, 255);
+}
+tr.fsp {
+    background-color: rgb(127, 127, 127);
+    color: #000;
 }
 #dark-mode-toggle {
     --bcolor: rgb(84, 84, 84);
@@ -338,31 +403,104 @@ pre {
     overflow-x: auto;
     font-family: 'Cascadia Mono', Consolas, monospace;
 }
+.comtext {
+    background-color: rgba(255,251,0,0.7);
+    padding: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255,191,0,0.7);
+    border-radius: 10px;
+}
+.camtext {
+    background-color: rgba(181, 230, 29, 0.7);
+    padding: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(151, 200, 0, 0.7);
+    border-radius: 10px;
+}
+.cemtext {
+    background-color: rgba(59, 191, 255, 0.7);
+    padding: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(29, 161, 242, 0.7);
+    border-radius: 10px;
+}
+.comtext *, .camtext *, .cemtext * {
+    font-family: '楷体';
+}
+#bg {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+#bg span {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 50px #000;
+}
+#bg span:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    top: 12%;
+    left: 14%;
+    background-color: purple;
+    animation: am1 ease-in-out 3s infinite alternate;
+}
+#bg span:nth-child(2) {
+    width: 200px;
+    height: 200px;
+    top: 62%;
+    left: 71%;
+    background-color: orange;
+    animation: am1 ease-in-out 4s infinite alternate-reverse;
+}
+#bg span:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    top: 26%;
+    left: 45%;
+    background-color: #00ffbf;
+    animation: am1 ease-in-out 2.5s 0.5s infinite alternate;
+}
+@keyframes am1 {
+    0% { transform: translateY(0);}
+    100% {transform: translateY(-30px);}
+}
 
 /* 深色模式样式 */
+.dark-mode {
+    background-color: #121212;
+}
 .dark-mode .content {
-    background-color: #121212; /* 背景颜色 */
     color: #ffffff; /* 字体颜色 */
     --text-color: #eee;
 }
-
-.dark-mode .menu {
-    background-color: #1e1e1e; /* 菜单背景颜色 */
+.dark-mode .content::before {
+    background-image: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
 .dark-mode .sticky {
-    background-color: #1e1e1e; /* 便签背景颜色 */
     border-color: #444; /* 便签边框颜色 */
     color: #ffffff; /* 便签字体颜色 */
 }
 
 .dark-mode #talk-board .tb {
-    background-color: #222; /* 留言板背景颜色 */
+    background-color: #22222203; /* 留言板背景颜色 */
     color: #ffffff; /* 留言板字体颜色 */
     border-color: #444; /* 留言板边框颜色 */
 }
 .dark-mode input, .dark-mode textarea {
-    background-color: #333; /* 输入框背景颜色 */
+    background-color: transparent; /* 输入框背景颜色 */
     color: #ffffff; /* 输入框字体颜色 */
     border-color: #555; /* 输入框边框颜色 */
 }
@@ -390,6 +528,15 @@ pre {
     background-color: #2c2c2c; /* 模态对话框标题栏背景颜色 */
     border-bottom-color: #444; /* 模态对话框标题栏边框颜色 */
     color: #ffffff; /* 模态对话框标题栏字体颜色 */
+}
+.dark-mode .postcard {
+    background-color: rgb(44, 44, 44);
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(200, 200, 200, 0.7);
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .dark-mode pre {
     background-color: #333; /* 代码块背景颜色 */
