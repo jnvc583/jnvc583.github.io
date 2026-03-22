@@ -169,7 +169,7 @@
 
         var html = '<div class="tb">'
             +'<form id="talk-form">'
-            +'<input id="talk-name" placeholder="昵称" maxlength="40" required>'
+            +'<input id="talk-name" placeholder="昵称（不要使用诸如“陈韵泽”之类在日记里出现过的名字）" maxlength="40" required>'
             +'<textarea id="talk-text" placeholder="流泻下一时的感受（支持HTML）" rows="4" required></textarea>'
             +'<button type="submit">发布评论</button>'
             +'</form>'
@@ -220,28 +220,35 @@
             e.preventDefault();
             var name = document.getElementById('talk-name').value.trim();
             var text = document.getElementById('talk-text').value.trim();
+            if (name == "陈韵泽" || name == "许梓浩" || name == "李钧宸" || name == "周宏宇" || name == "吴雨哲") {
+                alert('检测到敏感字符！\n禁止使用'+name+'先生的名字！');
+                return;
+            } else if (name == "作者" || name == "管理员" || name == "Administrator") {
+                alert('竟敢冒充'+name+'！？你他妈疯了！');
+                return;
+            }
             if(!text) return;
             var c = { id: ('c'+Date.now()+'-'+Math.floor(Math.random()*10000)), name: name, text: text, t: Date.now() };
 
-            if(useSupabase()){
-                apiPostSupabase({ path: location.pathname, id: c.id, name: c.name, text: c.text, t: c.t }).then(function(saved){
+            if (useSupabase()) {
+                apiPostSupabase({ path: location.pathname, id: c.id, name: c.name, text: c.text, t: c.t }).then(function (saved) {
                     return apiGetSupabase();
-                }).then(function(data){ comments = Array.isArray(data)?data:[]; var s=''; comments.forEach(function(cc,i){ s+=renderComment(cc,i); }); list.innerHTML = s; }).catch(function(){
+                }).then(function (data) { comments = Array.isArray(data) ? data : []; var s = ''; comments.forEach(function (cc, i) { s += renderComment(cc, i); }); list.innerHTML = s; }).catch(function () {
                     disableSupabase();
                     comments.push(c);
                     saveLocal(comments);
-                    list.insertAdjacentHTML('beforeend', renderComment(c, comments.length-1));
+                    list.insertAdjacentHTML('beforeend', renderComment(c, comments.length - 1));
                     alert('Supabase 不可用（网络/域名解析失败），已转为本地存储评论。');
                 });
-            }else if(useBackend()){
-                apiPost({ path: location.pathname, comment: c }).then(function(saved){
+            } else if (useBackend()) {
+                apiPost({ path: location.pathname, comment: c }).then(function (saved) {
                     // refresh list from server
                     return apiGet();
-                }).then(function(data){ comments = Array.isArray(data)?data:[]; var s=''; comments.forEach(function(cc,i){ s+=renderComment(cc,i); }); list.innerHTML = s; }).catch(function(){ alert('发布失败（网络或服务器错误）'); });
-            }else{
+                }).then(function (data) { comments = Array.isArray(data) ? data : []; var s = ''; comments.forEach(function (cc, i) { s += renderComment(cc, i); }); list.innerHTML = s; }).catch(function () { alert('发布失败（网络或服务器错误）'); });
+            } else {
                 comments.push(c);
                 saveLocal(comments);
-                list.insertAdjacentHTML('beforeend', renderComment(c, comments.length-1));
+                list.insertAdjacentHTML('beforeend', renderComment(c, comments.length - 1));
             }
 
             form.reset();

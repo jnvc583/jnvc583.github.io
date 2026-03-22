@@ -8,11 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>稚子弄冰</title>
     <style>
-        .content img {
+        .comicbox img {
+            display: inline;
             margin: 0;
+            border-radius: 0;
+            position: static;
         }
         .heng {
             display: flex;
+        }
+        .shu {
+            display: inline;
+        }
+        .comicbox {
+            position: relative;
+            letter-spacing: 0;
+            line-height: 0;
         }
         .comicbox, .comicbox div {
             padding: 0;
@@ -62,7 +73,17 @@
                 </h2>
                 <div class="comicbox">
                     <div class="heng">
-                        <img src="1.png">
+                        <img src="1.png" height="380" width="400">
+                        <div class="shu">
+                            <img src="2.png">
+                            <img src="3.png">
+                        </div>
+                    </div>
+                    <div class="heng">
+                        <img src="4.png"><img src="5.png"><img src="6.png">
+                    </div>
+                    <div class="heng">
+                        <img src="7.png">
                     </div>
                 </div>
                 <p>（没有更新完，估计明天就可以了）</p>
