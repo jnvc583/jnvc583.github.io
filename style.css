@@ -1,27 +1,29 @@
 :root {
-    --text-color: rgb(40,40,40);
+    --text-color: rgb(40, 40, 40);
 }
+
 body {
     margin: 0;
-    background: rgb(250,250,250);
+    background: rgb(126, 9, 204);
 }
-hr {
-    display: none;
-}
+
 * {
     font-family: 'Cascadia Mono', '微软雅黑';
     transition: all .7s;
 }
+
 *::selection {
     background: rgb(126, 9, 204);
     color: white;
 }
+
 .root {
     position: absolute;
     left: 0;
     background: inherit;
     width: 100%;
 }
+
 .main {
     position: relative;
     top: 86px;
@@ -29,26 +31,23 @@ hr {
     display: flex;
     margin-bottom: 50px;
 }
+
 .menu {
     position: fixed;
     width: 100%;
-    background-color: rgba(230,230,230,0.05);
-    backdrop-filter: blur(4px);
-    box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
-            2px 2px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgb(230, 230, 230);
+    box-shadow: 2px 0px 5px rgb(150, 150, 150);
     z-index: 100;
 }
+
 .content {
     position: relative;
-    z-index: 50;
     margin: 21px 21px 21px 0;
-    background-color: rgba(250,250,250,0.05);
+    background-color: rgb(250, 250, 250);
     padding: 30px;
-    backdrop-filter: blur(4px);
-    border-radius: 15px;
-    box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
-            2px 2px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 5px rgb(200, 200, 200);
 }
+
 .content::before {
     content: "";
     position: absolute;
@@ -65,14 +64,17 @@ hr {
     z-index: 10;
     /* Allow clicking through the pattern layer */
 }
+
 .content * {
     position: relative;
     z-index: 20;
 }
+
 .content img {
     margin: 10px;
     border-radius: 8px;
 }
+
 .red {
     color: rgb(224, 36, 94);
 }
@@ -81,6 +83,7 @@ hr {
     background-color: rgb(224, 36, 94);
     color: white;
 }
+
 .orange {
     color: orange;
 }
@@ -89,68 +92,85 @@ hr {
     background-color: orange;
     color: white;
 }
+
 .yellow {
     color: rgb(255, 251, 0);
 }
+
 .yellow::selection {
     background-color: rgb(255, 251, 0);
     color: black;
 }
+
 .lightgreen {
-    color: rgb(181,230,29);
+    color: rgb(181, 230, 29);
 }
+
 .lightgreen::selection {
-    background-color: rgb(181,230,29);
+    background-color: rgb(181, 230, 29);
     color: black;
 }
+
 .green {
     color: green;
     text-decoration: none;
 }
+
 .green::selection {
     background-color: green;
     color: white;
 }
+
 .cyan {
-    color: rgb(0,255,191);
+    color: rgb(0, 255, 191);
     text-decoration: none;
 }
+
 .cyan::selection {
-    background-color: rgb(0,255,191);
+    background-color: rgb(0, 255, 191);
     color: black;
 }
+
 .lightblue {
-    color: rgb(29,161,242);
+    color: rgb(29, 161, 242);
     text-decoration: none;
 }
+
 .lightblue::selection {
-    background-color: rgb(29,161,242);
+    background-color: rgb(29, 161, 242);
     color: white;
 }
+
 .purple {
-    color: rgb(150,50,250);
+    color: rgb(150, 50, 250);
     text-decoration: none;
 }
+
 .purple::selection {
-    background-color: rgb(150,50,250);
+    background-color: rgb(150, 50, 250);
     color: white;
 }
+
 .pink {
     color: #ff00bf;
     text-decoration: none;
 }
+
 .pink::selection {
     background-color: #ff00bf;
     color: white;
 }
+
 .lightgray2 {
     color: #555;
     text-decoration: none;
 }
+
 .lightgray2::selection {
     background-color: #555;
     color: white;
 }
+
 header {
     font-size: 150%;
     font-weight: bold;
@@ -177,41 +197,47 @@ header::selection {
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     color: black;
 }
-.lightgray, i, .fangshi a {
+
+.lightgray,
+i,
+.fangshi a {
     color: inherit;
 }
+
 .sticky {
     padding: 10px;
-    color: rgb(80,80,80);
+    color: rgb(80, 80, 80);
     transition: all 1s;
     border-style: solid;
     border-width: 1px;
-    border-color: rgb(200,200,200);
+    border-color: rgb(200, 200, 200);
     border-radius: 10px;
     position: sticky;
     transition: all 1s;
-    background-color: rgba(250,250,250,0.05);
-    backdrop-filter: blur(4px);
-    box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
-            2px 2px 15px rgba(0, 0, 0, 0.5);
-    z-index: 50;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 2px 2px 5px rgb(200, 200, 200);
 }
+
 .sticky:hover {
     color: black;
     border-radius: 25px;
     padding: 25px;
     margin-left: 6%;
 }
+
 .sticky[nomove]:hover {
     padding: 10px;
     border-radius: 10px;
 }
+
 .stickybox:hover {
     margin-right: 6%;
 }
+
 .stickybox[nomove]:hover {
     margin-right: 4%;
 }
+
 .stickybox {
     display: flex;
     flex-direction: column;
@@ -220,45 +246,62 @@ header::selection {
     margin-top: 21.44px;
     transition: all 1s;
 }
+
 .fangshi ul {
     list-style-type: none;
 }
-.projects, .posts, .diary {
+
+.projects,
+.posts,
+.diary {
     margin-top: 21.44px;
-    color: rgb(100,100,100);
+    color: rgb(100, 100, 100);
     transition: all 1s;
 }
-.projects:hover, .posts:hover, .diary:hover {
+
+.projects:hover,
+.posts:hover,
+.diary:hover {
     color: var(--text-color);
 }
+
 a {
     color: var(--text-color);
 }
+
 .menu {
     padding: 22px;
-    color: rgb(181,230,29);
+    color: rgb(181, 230, 29);
 }
+
 h1 {
     margin: 0;
 }
+
 ul {
     list-style-type: none;
     padding-left: 0;
 }
+
 .content p {
     text-indent: 2em;
     margin: 0;
     font-size: larger;
 }
+
 .list {
     margin-top: 50px;
 }
-.diary table, .diary th, .diary td {
+
+.diary table,
+.diary th,
+.diary td {
     border-style: solid;
     border-width: 1px;
     margin: 20px 0;
     border-spacing: 0;
 }
+
 a button {
     background: rgb(50, 201, 0);
     font-family: inherit;
@@ -275,9 +318,11 @@ a button {
     font-weight: 500;
     color: white;
 }
+
 a button:hover {
     background-color: rgb(0, 151, 0);
 }
+
 .smallavt {
     margin: 0;
     display: inline-block;
@@ -285,49 +330,60 @@ a button:hover {
     height: 50px;
     border-radius: 50%;
     border-style: solid;
-    border-color: rgb(200,200,200);
+    border-color: rgb(200, 200, 200);
     border-width: 1px;
     overflow: hidden;
 }
+
 .smallavt img {
     margin: 0;
 }
+
 .llg {
-    color: rgb(250,250,250);
+    color: rgb(250, 250, 250);
 }
+
 z {
     font-size: 16px;
     display: block;
 }
+
 span {
     color: orange;
     font-weight: bold;
     font-size: 30px;
 }
+
 span::selection {
     background-color: orange;
     color: white;
 }
+
 .list li {
     margin-bottom: 30px;
 }
+
 .kttext {
     font-family: '楷体';
     font-size: 18px;
 }
+
 .highbox {
     background-color: rgb(173, 173, 173);
     margin-bottom: 20px;
     border-radius: 20px;
     padding: 20px;
 }
+
 tr.esp {
     background-color: rgb(133, 220, 255);
 }
+
 tr.fsp {
     background-color: rgb(127, 127, 127);
     color: #000;
 }
+
 #dark-mode-toggle {
     --bcolor: rgb(84, 84, 84);
     font-family: inherit;
@@ -376,42 +432,48 @@ tr.fsp {
     background: rgb(39, 39, 39);
     transition: background 0s;
 }
+
 .popupbtn {
-    background-color: rgb(250,250,250);
+    background-color: rgb(250, 250, 250);
     border-style: solid;
     border-width: 1px;
-    border-color: rgb(200,200,200);
+    border-color: rgb(200, 200, 200);
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
 }
+
 .popupbtn:hover {
-    background-color: rgb(220,220,220);
+    background-color: rgb(220, 220, 220);
 }
+
 .postcard {
-    background-color: rgb(250,250,250);
+    background-color: rgb(250, 250, 250);
     padding: 20px;
-    box-shadow: 2px 2px 5px rgba(200,200,200,0.7);
+    box-shadow: 2px 2px 5px rgba(200, 200, 200, 0.7);
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
+
 pre {
-    background-color: rgb(240,240,240);
+    background-color: rgb(240, 240, 240);
     padding: 10px;
     border-radius: 5px;
     overflow-x: auto;
     font-family: 'Cascadia Mono', Consolas, monospace;
 }
+
 .comtext {
-    background-color: rgba(255,251,0,0.7);
+    background-color: rgba(255, 251, 0, 0.7);
     padding: 15px;
     border-style: solid;
     border-width: 1px;
-    border-color: rgba(255,191,0,0.7);
+    border-color: rgba(255, 191, 0, 0.7);
     border-radius: 10px;
 }
+
 .camtext {
     background-color: rgba(181, 230, 29, 0.7);
     padding: 15px;
@@ -420,6 +482,7 @@ pre {
     border-color: rgba(151, 200, 0, 0.7);
     border-radius: 10px;
 }
+
 .cemtext {
     background-color: rgba(59, 191, 255, 0.7);
     padding: 15px;
@@ -428,61 +491,22 @@ pre {
     border-color: rgba(29, 161, 242, 0.7);
     border-radius: 10px;
 }
-.comtext *, .camtext *, .cemtext * {
+
+.comtext *,
+.camtext *,
+.cemtext * {
     font-family: '楷体';
-}
-#bg {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-}
-#bg span {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    box-shadow: 1px 1px 50px #000;
-}
-#bg span:nth-child(1) {
-    width: 120px;
-    height: 120px;
-    top: 12%;
-    left: 14%;
-    background-color: purple;
-    animation: am1 ease-in-out 3s infinite alternate;
-}
-#bg span:nth-child(2) {
-    width: 200px;
-    height: 200px;
-    top: 62%;
-    left: 71%;
-    background-color: orange;
-    animation: am1 ease-in-out 4s infinite alternate-reverse;
-}
-#bg span:nth-child(3) {
-    width: 60px;
-    height: 60px;
-    top: 26%;
-    left: 45%;
-    background-color: #00ffbf;
-    animation: am1 ease-in-out 2.5s 0.5s infinite alternate;
-}
-@keyframes am1 {
-    0% { transform: translateY(0);}
-    100% {transform: translateY(-30px);}
 }
 
 /* 深色模式样式 */
-.dark-mode {
-    background-color: #121212;
-}
 .dark-mode .content {
-    color: #ffffff; /* 字体颜色 */
+    background-color: #121212;
+    /* 背景颜色 */
+    color: #ffffff;
+    /* 字体颜色 */
     --text-color: #eee;
 }
+
 .dark-mode .content::before {
     background-image: linear-gradient(90deg,
             rgba(255, 255, 255, 0.02) 1px,
@@ -490,46 +514,84 @@ pre {
         linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
 }
 
+.dark-mode .menu {
+    background-color: #1e1e1e;
+    /* 菜单背景颜色 */
+}
+
 .dark-mode .sticky {
-    border-color: #444; /* 便签边框颜色 */
-    color: #ffffff; /* 便签字体颜色 */
+    background-color: #1e1e1e;
+    /* 便签背景颜色 */
+    border-color: #444;
+    /* 便签边框颜色 */
+    color: #ffffff;
+    /* 便签字体颜色 */
 }
 
 .dark-mode #talk-board .tb {
-    background-color: #22222203; /* 留言板背景颜色 */
-    color: #ffffff; /* 留言板字体颜色 */
-    border-color: #444; /* 留言板边框颜色 */
+    background-color: #222;
+    /* 留言板背景颜色 */
+    color: #ffffff;
+    /* 留言板字体颜色 */
+    border-color: #444;
+    /* 留言板边框颜色 */
 }
-.dark-mode input, .dark-mode textarea {
-    background-color: transparent; /* 输入框背景颜色 */
-    color: #ffffff; /* 输入框字体颜色 */
-    border-color: #555; /* 输入框边框颜色 */
+
+.dark-mode input,
+.dark-mode textarea {
+    background-color: #333;
+    /* 输入框背景颜色 */
+    color: #ffffff;
+    /* 输入框字体颜色 */
+    border-color: #555;
+    /* 输入框边框颜色 */
 }
+
 .dark-mode .popupbtn {
-    background-color: #222; /* 弹出按钮背景颜色 */
-    color: #ffffff; /* 弹出按钮字体颜色 */
-    border-color: #444; /* 弹出按钮边框颜色 */
+    background-color: #222;
+    /* 弹出按钮背景颜色 */
+    color: #ffffff;
+    /* 弹出按钮字体颜色 */
+    border-color: #444;
+    /* 弹出按钮边框颜色 */
 }
+
 .dark-mode .popupbtn:hover {
-    background-color: #666; /* 弹出按钮悬停背景颜色 */
+    background-color: #666;
+    /* 弹出按钮悬停背景颜色 */
 }
+
 .dark-mode tr.esp {
-    background-color: rgba(133, 220, 255, 0.75); /* 表格行背景颜色 */
+    background-color: rgba(133, 220, 255, 0.75);
+    /* 表格行背景颜色 */
 }
+
 .dark-mode .highbox {
-    background-color: #ccc; /* 高亮框背景颜色 */
-    color: #000; /* 高亮框字体颜色 */
+    background-color: #ccc;
+    /* 高亮框背景颜色 */
+    color: #000;
+    /* 高亮框字体颜色 */
 }
+
 .dark-mode .modal-dialog {
-    background-color: #1e1e1e; /* 模态对话框背景颜色 */
-    color: #ffffff; /* 模态对话框字体颜色 */
-    border-color: #444; /* 模态对话框边框颜色 */
+    background-color: #1e1e1e;
+    /* 模态对话框背景颜色 */
+    color: #ffffff;
+    /* 模态对话框字体颜色 */
+    border-color: #444;
+    /* 模态对话框边框颜色 */
 }
-.dark-mode .modal-header, .dark-mode .mac-titlebar {
-    background-color: #2c2c2c; /* 模态对话框标题栏背景颜色 */
-    border-bottom-color: #444; /* 模态对话框标题栏边框颜色 */
-    color: #ffffff; /* 模态对话框标题栏字体颜色 */
+
+.dark-mode .modal-header,
+.dark-mode .mac-titlebar {
+    background-color: #2c2c2c;
+    /* 模态对话框标题栏背景颜色 */
+    border-bottom-color: #444;
+    /* 模态对话框标题栏边框颜色 */
+    color: #ffffff;
+    /* 模态对话框标题栏字体颜色 */
 }
+
 .dark-mode .postcard {
     background-color: rgb(44, 44, 44);
     padding: 20px;
@@ -539,8 +601,11 @@ pre {
     flex-wrap: wrap;
     gap: 20px;
 }
+
 .dark-mode pre {
-    background-color: #333; /* 代码块背景颜色 */
-    color: #ffffff; /* 代码块字体颜色 */
+    background-color: #333;
+    /* 代码块背景颜色 */
+    color: #ffffff;
+    /* 代码块字体颜色 */
     font-family: 'Cascadia Mono', Consolas, monospace;
 }
