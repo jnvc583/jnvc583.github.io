@@ -28,7 +28,7 @@ jobs:
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-        run: bun run scripts/keep-alive.js
+        run: bun run ./scripts/keep-alive.js
       
       - name: 记录执行时间
         if: always()
