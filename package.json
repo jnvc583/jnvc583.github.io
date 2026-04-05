@@ -4,7 +4,8 @@
   "description": "GitHub Pages site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "keepalive": "bun run ./scripts/keep-alive.js"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,8 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.101.1"
   }
 }
