@@ -1,0 +1,119 @@
+#spring-title {
+    color: rgb(62, 207, 142);
+}
+
+#spring-title::selection {
+    color: white;
+    background-color: rgb(62, 207, 142);
+}
+
+#summer-title {
+    color: green;
+}
+
+#summer-title::selection {
+    color: white;
+    background-color: green;
+}
+
+#autumn-title {
+    color: gold;
+}
+
+#autumn-title::selection {
+    color: white;
+    background-color: gold;
+}
+
+#winter-title {
+    color: darkcyan;
+}
+
+#winter-title::selection {
+    color: black;
+    background-color: darkcyan;
+}
+
+.poem-item {
+    display: block;
+    border-radius: 1.5em;
+    background-color: #f5f5f5;
+    padding: 1em;
+    max-width: 10em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(200, 200, 200);
+    margin-top: 15px;
+    animation: none;
+}
+.poem-item:hover {
+    box-shadow: 3px 5px 5px rgba(100, 100, 100, 0.4);
+}
+.spring-poem:hover, .dark-mode .spring-poem:hover {
+    color: white;
+    background-color: rgb(62, 207, 142);
+}
+.summer-poem:hover, .dark-mode .summer-poem:hover {
+    color: white;
+    background-color: green;
+}
+.autumn-poem:hover, .dark-mode .autumn-poem:hover {
+    color: white;
+    background-color: gold;
+}
+.winter-poem:hover, .dark-mode .winter-poem:hover {
+    color: black;
+    background-color: darkcyan;
+}
+.poem-text {
+    min-width: 300px;
+    padding: 15px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(200, 200, 200);
+    border-radius: 10px;
+}
+.poem-text *, .poem-text p {
+    text-align: center;
+    font-family: 'Comic Sans MS',Verdana, Geneva, Tahoma, sans-serif;
+    text-indent: 0;
+}
+.spring-docu *::selection {
+    background-color: rgb(62, 207, 142);
+    color: white;
+}
+.summer-docu *::selection {
+    background-color: green;
+    color: white;
+}
+.autumn-docu *::selection {
+    background-color: gold;
+    color: white;
+}
+.winter-docu *::selection {
+    background-color: darkcyan;
+    color: white;
+}
+.spring-docu .poem-text {
+    background-color: rgb(122, 255, 202);
+}
+.summer-docu .poem-text {
+    background-color: lightgreen;
+}
+.autumn-docu .poem-text {
+    background-color: rgb(255, 235, 30);
+}
+.winter-docu .poem-text {
+    background-color: cyan;
+}
+g {
+    color: red;
+}
+
+.dark-mode .poem-text {
+    color: black;
+}
+.dark-mode .poem-item {
+    background-color: #333;
+    color: #eee;
+}
