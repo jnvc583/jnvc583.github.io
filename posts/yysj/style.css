@@ -35,7 +35,7 @@
 }
 
 .poem-item {
-    display: block;
+    display: inline-block;
     border-radius: 1.5em;
     background-color: #f5f5f5;
     padding: 1em;
@@ -43,11 +43,11 @@
     border-style: solid;
     border-width: 1px;
     border-color: rgb(200, 200, 200);
-    margin-top: 15px;
-    animation: none;
+    margin: 15px 15px 0 0;
 }
 .poem-item:hover {
     box-shadow: 3px 5px 5px rgba(100, 100, 100, 0.4);
+    animation: poitem 1s;
 }
 .spring-poem:hover, .dark-mode .spring-poem:hover {
     color: white;
@@ -116,4 +116,23 @@ g {
 .dark-mode .poem-item {
     background-color: #333;
     color: #eee;
+}
+#elscmt {
+    background: rgba(255, 251, 0, 0.5);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(255, 169, 0);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    color: black;
+}
+
+@keyframes poitem {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
