@@ -1,0 +1,135 @@
+.dialogue {
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #eee;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #aaa;
+    margin: 20px 0 40px 0;
+}
+
+.dialogue:hover,
+.dial-item:hover,
+.dial-text:hover,
+.green-dialogue:hover,
+.dark-dialogue:hover {
+    box-shadow: 7px 10px 10px rgb(100, 100, 100, 0.4);
+}
+
+.dial-item {
+    display: flex;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #ddd;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #aaa;
+    margin-bottom: 15px;
+}
+
+.dial-item:last-child {
+    margin-bottom: 0;
+}
+
+.dial-avar img {
+    width: 50px;
+    margin: 0;
+}
+
+.dial-text {
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #ccc;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #aaa;
+    color: #000;
+}
+
+.green-dialogue {
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #4fe09f;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1cad6c;
+    margin: 20px 0 40px 0;
+}
+
+.green-dialogue .dial-item {
+    display: flex;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #3ecf8e;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1cad6c;
+    margin-bottom: 15px;
+}
+
+.green-dialogue .dial-item:last-child {
+    margin-bottom: 0;
+}
+
+.green-dialogue .dial-avar img {
+    width: 50px;
+    margin: 0;
+}
+
+.green-dialogue .dial-text {
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #2dbe7d;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1cad6c;
+    color: #eee;
+}
+
+.dark-dialogue {
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #444;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #666;
+    margin: 20px 0 40px 0;
+}
+
+.dark-dialogue .dial-item {
+    display: flex;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #333;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #666;
+    margin-bottom: 15px;
+}
+
+.dark-dialogue .dial-item:last-child {
+    margin-bottom: 0;
+}
+
+.dark-dialogue .dial-avar img {
+    width: 50px;
+    margin: 0;
+}
+
+.dark-dialogue .dial-text {
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #222;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #666;
+    color: #eee;
+}
+
+.chgdgc {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-style: none;
+    margin: 0;
+}

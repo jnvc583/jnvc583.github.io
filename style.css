@@ -465,44 +465,6 @@ pre {
     font-family: 'Cascadia Mono', Consolas, monospace;
 }
 
-.dialogue {
-    padding: 15px;
-    border-radius: 15px;
-    background-color: rgb(92, 237, 172);
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(2, 147, 82);
-    margin: 20px 0 40px 0;
-}
-.dialogue:hover, .dial-item:hover, .dial-text:hover {
-    box-shadow: 3px 5px 5px rgb(100,100,100,0.4);
-}
-.dial-item {
-    display: flex;
-    padding: 15px;
-    border-radius: 15px;
-    background-color: rgb(62, 207, 142);
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(2, 147, 82);
-    margin-bottom: 15px;
-}
-.dial-item:last-child {
-    margin-bottom: 0;
-}
-.dial-avar img {
-    width: 50px;
-    margin: 0;
-}
-.dial-text {
-    padding: 15px;
-    border-radius: 15px;
-    background-color: rgb(32, 177, 112);
-    border-style: solid;
-    border-width: 1px;
-    border-color: rgb(2, 147, 82);
-}
-
 .comtext {
     background-color: rgba(255, 251, 0, 0.7);
     padding: 15px;
