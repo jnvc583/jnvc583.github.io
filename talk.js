@@ -220,7 +220,7 @@
             e.preventDefault();
             var name = document.getElementById('talk-name').value.trim();
             var text = document.getElementById('talk-text').value.trim();
-            if (name == "陈韵泽" || name == "许梓浩" || name == "李钧宸" || name == "周宏宇" || name == "吴雨哲") {
+            if (name == "陈韵泽") {
                 alert('检测到敏感字符！\n禁止使用'+name+'先生的名字！');
                 return;
             } else if (name == "作者" || name == "管理员" || name == "Administrator") {
