@@ -18,7 +18,7 @@
         tmp.innerHTML = withBreaks;
 
         var defaultWhitelist = {
-            'b': ['class'], 'i': ['class'], 'em': ['class'], 'strong': ['class'], 'a': ['href','title','class','style'],
+            'b': ['class'], 'i': ['class'], 'em': ['class'], 'strong': ['class'], 'a': ['href','title','class','style'], 'div': ['class','style'],
             'code': ['class','style'], 'pre': ['class','style'], 'br': [], 'p': ['class','style'], 'ul': ['class'], 'ol': ['class'], 'li': ['class','style'], 'span': ['class','style']
         };
 
@@ -220,7 +220,7 @@
             e.preventDefault();
             var name = document.getElementById('talk-name').value.trim();
             var text = document.getElementById('talk-text').value.trim();
-            if (name == "陈韵泽" || name == "许梓浩" || name == "李钧宸" || name == "周宏宇" || name == "吴雨哲") {
+            if (name == "陈韵泽") {
                 alert('检测到敏感字符！\n禁止使用'+name+'先生的名字！');
                 return;
             } else if (name == "作者" || name == "管理员" || name == "Administrator") {
