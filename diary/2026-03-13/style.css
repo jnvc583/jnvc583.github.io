@@ -1,0 +1,14 @@
+dt {
+    color: coral;
+    font-size: 18px;
+}
+dt::selection {
+    background-color: coral;
+    color: white;
+}
+em a {
+    color: purple;
+}
+dd {
+    margin-inline-start: 2em;
+}
