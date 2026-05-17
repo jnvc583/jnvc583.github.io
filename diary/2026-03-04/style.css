@@ -1,0 +1,6 @@
+.ipblk {
+    -webkit-text-fill-color: rgba(0,0,0,0);
+    background: linear-gradient(128.87deg,rgb(0, 119, 255),rgb(119, 0, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+}
