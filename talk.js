@@ -18,7 +18,7 @@
         tmp.innerHTML = withBreaks;
 
         var defaultWhitelist = {
-            'b': ['class'], 'i': ['class'], 'em': ['class'], 'strong': ['class'], 'a': ['href','title','class','style'],
+            'b': ['class'], 'i': ['class'], 'em': ['class'], 'strong': ['class'], 'a': ['href','title','class','style'], 'div': ['class','style'],
             'code': ['class','style'], 'pre': ['class','style'], 'br': [], 'p': ['class','style'], 'ul': ['class'], 'ol': ['class'], 'li': ['class','style'], 'span': ['class','style']
         };
 
@@ -140,7 +140,11 @@
         var key = 'comments:' + location.pathname;
 
         var style = document.createElement('style');
+<<<<<<< HEAD
         style.textContent = '#talk-board .tb{border:1px solid #ddd;padding:12px;border-radius:6px;margin-top:12px;backdrop-filter: blur(4px);box-shadow: inset 1px 1px 6px rgba(255,255,255,0.3),2px 2px 15px rgba(0,0,0,0.5);}#talk-board form input,#talk-board form textarea{width:100%;box-sizing:border-box;padding:8px;margin:6px 0;border:1px solid #ccc;border-radius:4px;backdrop-filter: blur(4px);box-shadow: inset 1px 1px 6px rgba(255,255,255,0.3),2px 2px 15px rgba(0,0,0,0.5);}#talk-board .comment{border-top:1px solid #f0f0f0;padding:8px 0}#talk-board .meta{font-size:12px;color:rgb(0,225,161)}#talk-board .del{color:#c00;cursor:pointer;margin-left:8px} button[type="submit"]{background-color:#4CAF50;color:white;padding:10px 16px;border:none;border-radius:4px;cursor:pointer}button[type="submit"]:hover{background-color:#45a049}';
+=======
+        style.textContent = '#talk-board .tb{border:1px solid #ddd;padding:12px;border-radius:6px;margin-top:12px;backdrop-filter: blur(4px);box-shadow: inset 1px 1px 6px rgba(255,255,255,0.3),2px 2px 15px rgba(0,0,0,0.5);}#talk-board form input,#talk-board form textarea{width:100%;box-sizing:border-box;padding:8px;margin:6px 0;border:1px solid #ccc;border-radius:4px;backdrop-filter: blur(4px);box-shadow: inset 1px 1px 6px rgba(255,255,255,0.3),2px 2px 15px rgba(0,0,0,0.5);}#talk-board .comment{border-top:1px solid #f0f0f0;padding:8px 0}#talk-board .meta{font-size:12px;color:rgb(0, 255, 191)}#talk-board .del{color:#c00;cursor:pointer;margin-left:8px} button[type="submit"]{background-color:#4CAF50;color:white;padding:10px 16px;border:none;border-radius:4px;cursor:pointer}button[type="submit"]:hover{background-color:#45a049}';
+>>>>>>> bed5f257877e2326150576b50c820c5900815a0a
         document.head.appendChild(style);
 
         // local storage functions
