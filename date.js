@@ -11,9 +11,6 @@ if (getCurrentDate() === "12-13" || getCurrentDate() === "12-14") {
     document.documentElement.style.webkitFilter = "grayscale(100%)";
     avt.src = "./sadavatar.png";
 }
-let newScript = document.createElement('script');
-newScript.src = "https://jnvc583.github.io/dark.js";
-document.body.appendChild(newScript);
 const topValue = document.querySelector('.menu').offsetHeight + 'px';
 Array.from(document.getElementsByClassName('sticky')).forEach(el => el.style.top = topValue);
 
