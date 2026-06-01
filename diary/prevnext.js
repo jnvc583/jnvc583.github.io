@@ -93,7 +93,7 @@
 
       // 简单样式（与 site style 协调）
       var style = document.createElement('style');
-      style.textContent = '\n.prevnext-btn{background:#00ffbf;border:1px solid #ccc;padding:6px 10px;border-radius:4px;text-decoration:none;color:#222}\n.dark-mode .prevnext-btn{background:#222;border-color:#444;color:#00ffbf}\n.prevnext{gap:12px}\n';
+      style.textContent = '\n.prevnext-btn{background:#00ffbf;border:1px solid #444;padding:6px 10px;text-decoration:none;color:#222}\n.dark-mode .prevnext-btn{background:#222;border-color:#444;color:#00ffbf}\n.prevnext{gap:12px}\n';
       document.head.appendChild(style);
     }).catch(function(err){
       console && console.log && console.log('prevnext.js load error', err);

@@ -14,11 +14,6 @@ if (getCurrentDate() === "12-13" || getCurrentDate() === "12-14") {
 let newScript = document.createElement('script');
 newScript.src = "https://jnvc583.github.io/dark.js";
 document.body.appendChild(newScript);
-let darkModeToggle = document.createElement('button');
-darkModeToggle.id = "dark-mode-toggle";
-darkModeToggle.innerText = "切换深色模式";
-document.querySelector('.menu').appendChild(darkModeToggle);
-console.log(document.querySelector('.menu').offsetHeight);
 const topValue = document.querySelector('.menu').offsetHeight + 'px';
 Array.from(document.getElementsByClassName('sticky')).forEach(el => el.style.top = topValue);
 
