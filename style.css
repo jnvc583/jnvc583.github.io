@@ -67,8 +67,15 @@ body {
 }
 
 .content img {
-    margin: 10px;
-    border-radius: 8px;
+    margin: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
+}
+
+o {
+    display: block;
+    text-indent: 2em;
 }
 
 .red {
