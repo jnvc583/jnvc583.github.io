@@ -39,7 +39,6 @@ body {
 .main {
     position: relative;
     top: 86px;
-    width: 100%;
     display: flex;
     margin-bottom: 50px;
     justify-content: center;
@@ -69,6 +68,20 @@ body {
 .content img {
     margin: 10px;
     border-radius: 8px;
+}
+
+.sticky {
+    padding: 10px;
+    color: rgb(80, 80, 80);
+    transition: all 1s;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(200, 200, 200);
+    border-radius: 10px;
+    position: sticky;
+    transition: all 1s;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 2px 2px 5px rgb(200, 200, 200);
 }
 
 .red {
@@ -345,3 +358,13 @@ tr.fsp {
     color: #000;
 }
 
+.yobox {
+    padding: 8px;
+    border-style: solid;
+    border-color: rgb(244, 136, 45);
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: rgb(255, 251, 0);
+    font-family: '楷体';
+
+}
