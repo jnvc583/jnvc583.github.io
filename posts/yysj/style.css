@@ -35,32 +35,25 @@
 }
 
 .poem-item {
-    position: absolute;
     display: inline-block;
     padding: 0.7rem 1.5rem 1rem 4rem;
     max-width: 10em;
     border-style: solid;
     border-width: 1px;
     margin: 15px 15px 0 0;
-    transform-origin: 0% 100%;
-    transform: rotate(-10deg);
 }
 .poem-item:hover {
     box-shadow: 3px 5px 5px rgba(100, 100, 100, 0.4);
-    transform: translateY(-50px);
 }
 .spring-poem {
-    background: rgb(calc(var(--i) * 10 + 105), calc(var(--i) * 10 + 177), calc(var(--i) * 10 + 32));
-    left: calc((var(--i) - 1) * 50px);
-    z-index: calc(var(--i) * 50);
+    background-color: rgb(92, 237, 172);
+}
+.summer-poem {
+    background-color: lightgreen;
 }
 .spring-poem:hover, .dark-mode .spring-poem:hover {
     color: white;
     background-color: rgb(62, 207, 142);
-}
-.springb {
-    position: relative;
-    height: 50px;
 }
 .summer-poem:hover, .dark-mode .summer-poem:hover {
     color: white;
@@ -74,7 +67,7 @@
     color: black;
     background-color: darkcyan;
 }
-.poem-text {
+.poem-text, .piyu {
     min-width: 300px;
     padding: 15px;
     border-style: solid;
@@ -137,11 +130,11 @@ g {
     color: black;
 }
 
-@keyframes poitem {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
-    }
+.piyu {
+    border-color: red;
+    background-color: rgb(238, 144, 144);
+}
+.piyu p::selection {
+    background-color: red;
+    color: azure;
 }

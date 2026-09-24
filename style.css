@@ -35,18 +35,20 @@ body {
     width: 100%;
     height: 5cqh;
 }
+.menu {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 2px 0px 5px rgb(150, 150, 150);
+    z-index: 100;
+}
 
 .main {
     position: relative;
     top: 86px;
     display: flex;
     margin-bottom: 50px;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu {
-    display: none;
+    padding-left: 5%;
 }
 
 .content {
@@ -79,7 +81,6 @@ o {
 
 .sticky {
     padding: 10px;
-    color: rgb(80, 80, 80);
     transition: all 1s;
     border-style: solid;
     border-width: 1px;
@@ -88,7 +89,10 @@ o {
     position: sticky;
     transition: all 1s;
     background-color: rgb(250, 250, 250);
-    box-shadow: 2px 2px 5px rgb(200, 200, 200);
+}
+
+.sticky:hover {
+    box-shadow: 5px 5px 5px #88888888;
 }
 
 .red {
@@ -221,12 +225,11 @@ i,
 }
 
 .stickybox {
-    display: none;
-    flex-direction: column;
-    align-items: center;
+    position: sticky;
     margin: 0 4%;
     margin-top: 21.44px;
     transition: all 1s;
+    height: auto;
 }
 
 .fangshi ul {
