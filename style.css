@@ -28,6 +28,10 @@ body {
     color: white;
 }
 
+p {
+    font-family: inherit;
+}
+
 .root {
     position: absolute;
     left: 0;
@@ -65,6 +69,10 @@ body {
 .content * {
     position: relative;
     z-index: 20;
+}
+
+.content p + p {
+    margin-top: 10px;
 }
 
 .content img {
@@ -376,5 +384,16 @@ tr.fsp {
     border-radius: 5px;
     background-color: rgb(255, 251, 0);
     font-family: '楷体';
+    font-size: large;
+}
 
+.ljbox {
+    padding: 8px;
+    border-style: solid;
+    border-color: rgb(215, 205, 190);
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: rgb(255, 245, 230);
+    font-family: '楷体';
+    font-size: large;
 }

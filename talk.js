@@ -18,7 +18,7 @@
         tmp.innerHTML = withBreaks;
 
         var defaultWhitelist = {
-            'b': ['class'], 'i': ['class'], 'em': ['class'], 'strong': ['class'], 'a': ['href','title','class','style'], 'div': ['class','style'],
+            'b': ['class'], 'i': ['class'], 'em': ['class'], 'strong': ['class'], 'a': ['href','title','class','style'], 'div': ['class','style'], 'img': ['class','title','style','width','height','alt','src'],
             'code': ['class','style'], 'pre': ['class','style'], 'br': [], 'p': ['class','style'], 'ul': ['class'], 'ol': ['class'], 'li': ['class','style'], 'span': ['class','style']
         };
 
