@@ -19,7 +19,7 @@ body {
 }
 
 * {
-    font-family: 'Cascadia Mono';
+    font-family: 'Cascadia Mono', '微软雅黑';
     transition: all .7s;
 }
 
