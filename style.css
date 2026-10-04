@@ -18,6 +18,12 @@ body {
     display: none;
 }
 
+hr {
+    border-style: solid;
+    border-width: 0.25px;
+    border-color: #000;
+}
+
 * {
     font-family: 'Cascadia Mono', '微软雅黑';
     transition: all .7s;
