@@ -254,14 +254,7 @@ i,
 .posts,
 .diary {
     margin-top: 21.44px;
-    color: rgb(100, 100, 100);
     transition: all 1s;
-}
-
-.projects:hover,
-.posts:hover,
-.diary:hover {
-    color: var(--text-color);
 }
 
 a {
