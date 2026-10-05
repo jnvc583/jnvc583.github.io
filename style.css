@@ -195,6 +195,16 @@ o {
     color: white;
 }
 
+.brown {
+    color: rgb(150, 75, 0);
+    text-decoration: none;
+}
+
+.brown::selection {
+    background-color: rgb(150, 75, 0);
+    color: white;
+}
+
 .lightgray2 {
     color: #555;
     text-decoration: none;
