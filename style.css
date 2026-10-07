@@ -387,6 +387,15 @@ tr.fsp {
     color: #000;
 }
 
+tr.hsp {
+    background-color: red;
+    color: white;
+}
+
+tr.hsp * {
+    color: white;
+}
+
 .yobox {
     padding: 8px;
     border-style: solid;
