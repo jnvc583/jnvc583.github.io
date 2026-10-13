@@ -366,9 +366,10 @@ span::selection {
     margin-bottom: 30px;
 }
 
-.kttext {
+p.kttext {
     font-family: '楷体';
     font-size: 18px;
+    text-indent: 0;
 }
 
 .highbox {
