@@ -379,8 +379,16 @@ p.kttext {
     padding: 20px;
 }
 
+tr.csp {
+    background-color: #eef;
+}
+
+tr.dsp {
+    background-color: #fdd;
+}
+
 tr.esp {
-    background-color: rgb(133, 220, 255);
+    background-color: #85dcff;
 }
 
 tr.fsp {
@@ -426,6 +434,17 @@ tr.hsp * {
     border-width: 1px;
     border-radius: 5px;
     background-color: rgb(181, 230, 29);
+    font-family: '楷体';
+    font-size: large;
+}
+
+.sbbox {
+    padding: 8px;
+    border-style: solid;
+    border-color: rgb(29, 161, 242);
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: rgb(89, 221, 255);
     font-family: '楷体';
     font-size: large;
 }
